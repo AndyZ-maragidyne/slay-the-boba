@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://qossk6mfs4gr"]
+
+[ext_resource type="Shader" uid="uid://dnd37at0og8es" path="res://water_thing.gdshader" id="1_d0bn5"]
+[ext_resource type="Script" uid="uid://d4e858ws305wc" path="res://waterSpawner.gd" id="2_oj8yc"]
+[ext_resource type="PackedScene" uid="uid://ftydvoe7ho5w" path="res://droplet.tscn" id="3_pco00"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_asnq1"]
+shader = ExtResource("1_d0bn5")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dc581"]
+size = Vector2(41.5, 321)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pr22"]
+size = Vector2(252.5, 49.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yitj8"]
+size = Vector2(40, 318)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ud2j"]
+size = Vector2(1924, 24)
+
+[node name="Node2D" type="Node2D" unique_id=885729630]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1722564426]
+material = SubResource("ShaderMaterial_asnq1")
+offset_right = 1926.0
+offset_bottom = 1088.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1181241249]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1926, 1088)
+render_target_update_mode = 4
+
+[node name="Marker2D" type="Marker2D" parent="SubViewportContainer/SubViewport" unique_id=1863675761]
+position = Vector2(464, 116)
+script = ExtResource("2_oj8yc")
+dropletScene = ExtResource("3_pco00")
+
+[node name="Timer" type="Timer" parent="SubViewportContainer/SubViewport/Marker2D" unique_id=1058817385]
+wait_time = 0.07
+autostart = true
+
+[node name="Timer2" type="Timer" parent="SubViewportContainer/SubViewport/Marker2D" unique_id=236182883]
+wait_time = 5.0
+
+[node name="Node2D" type="Node2D" parent="SubViewportContainer/SubViewport" unique_id=1650883680]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SubViewportContainer/SubViewport/Node2D" unique_id=1901015822]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=730997507]
+position = Vector2(302, 516)
+shape = SubResource("RectangleShape2D_dc581")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="SubViewportContainer/SubViewport/Node2D" unique_id=1887614974]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D2" unique_id=1565835210]
+position = Vector2(444.75, 667.25)
+shape = SubResource("RectangleShape2D_8pr22")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="SubViewportContainer/SubViewport/Node2D" unique_id=1162423817]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D3" unique_id=236321995]
+position = Vector2(582, 522)
+shape = SubResource("RectangleShape2D_yitj8")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=4797237]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D" unique_id=1257029974]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D" unique_id=747492068]
+position = Vector2(302, 516)
+shape = SubResource("RectangleShape2D_dc581")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D" unique_id=2008021248]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D2" unique_id=445256205]
+position = Vector2(444.75, 667.25)
+shape = SubResource("RectangleShape2D_8pr22")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Node2D" unique_id=1077431774]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D3" unique_id=552183993]
+position = Vector2(582, 522)
+shape = SubResource("RectangleShape2D_yitj8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1907943918]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1375719312]
+position = Vector2(960, 698)
+shape = SubResource("RectangleShape2D_8ud2j")
+
+[connection signal="timeout" from="SubViewportContainer/SubViewport/Marker2D/Timer" to="SubViewportContainer/SubViewport/Marker2D" method="_on_timer_timeout"]
+[connection signal="timeout" from="SubViewportContainer/SubViewport/Marker2D/Timer2" to="SubViewportContainer/SubViewport/Marker2D" method="_on_timer_2_timeout"]

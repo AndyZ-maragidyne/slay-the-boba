@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d0a2wfx6husdo"]
+
+[ext_resource type="Script" uid="uid://dhid6bmd5jnd4" path="res://Cards/hand.gd" id="1_mudef"]
+[ext_resource type="PackedScene" uid="uid://b5eyrj7u5j1a6" path="res://Cards/SmallCup.tscn" id="2_qccbl"]
+
+[node name="Node2D" type="Node2D" unique_id=1871700477]
+script = ExtResource("1_mudef")
+card_scene = ExtResource("2_qccbl")
+height_curve = 3.0
+rotation_curve = 3.0
+
+[node name="DiscardPile" type="Marker2D" parent="." unique_id=1543875599]
+position = Vector2(308, 10)

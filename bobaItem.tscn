@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cr8v25y4p2h01"]
+
+[ext_resource type="Script" uid="uid://ubvmwsnq0vxk" path="res://bobaItem.gd" id="1_1ocwx"]
+
+[node name="Boba" type="Node2D" unique_id=538718130]
+script = ExtResource("1_1ocwx")
+
+[node name="Timer" type="Timer" parent="." unique_id=1136691603]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

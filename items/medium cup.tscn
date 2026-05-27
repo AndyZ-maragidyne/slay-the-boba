@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bnpiwsesyiw27"]
+
+[ext_resource type="Texture2D" uid="uid://nni2qhkysasc" path="res://picutres/medium cup.png" id="1_7s4nr"]
+[ext_resource type="Script" uid="uid://cmxkmhfsy7dec" path="res://items/cup.gd" id="1_o7wte"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_o7wte"]
+a = Vector2(199, -277)
+b = Vector2(171, 273)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_s6mcu"]
+a = Vector2(-143, 276)
+b = Vector2(173, 273)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_viuxd"]
+a = Vector2(116, -269)
+b = Vector2(176, 279)
+
+[node name="MediumCup" type="Node2D" unique_id=317993334]
+script = ExtResource("1_o7wte")
+
+[node name="Cup" type="RigidBody2D" parent="." unique_id=1985864777]
+
+[node name="Color" type="Polygon2D" parent="Cup" unique_id=1940078283]
+visible = false
+position = Vector2(2, 1)
+scale = Vector2(1, 0.9936709)
+polygon = PackedVector2Array(99, -100.63695, 84, 136.86626, -72, 140.89174, -100, -100.63695)
+
+[node name="MediumCup" type="Sprite2D" parent="Cup" unique_id=1657484885]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_7s4nr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cup" unique_id=853054443]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("SegmentShape2D_o7wte")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cup" unique_id=973439447]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("SegmentShape2D_s6mcu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Cup" unique_id=541454346]
+position = Vector2(-160, 1)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("SegmentShape2D_viuxd")

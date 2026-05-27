@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bihv0etdwf4ac"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_6ldq1"]
+[ext_resource type="Script" uid="uid://cenmim38sb5m2" path="res://items/itemData.gd" id="2_kugce"]
+
+[sub_resource type="Resource" id="Resource_w8oig"]
+script = ExtResource("2_kugce")
+itemName = "Water"
+category = 1
+color = Color(0.21568628, 0.49411765, 1, 1)
+metadata/_custom_type_script = "uid://cenmim38sb5m2"
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_6ldq1")]
+cardName = "Water"
+itemData = SubResource("Resource_w8oig")
+
+[node name="Label" type="Label" parent="." index="2" unique_id=2015234535]
+offset_left = -69.0
+offset_top = -101.0
+offset_right = -22.0
+offset_bottom = -78.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Water"

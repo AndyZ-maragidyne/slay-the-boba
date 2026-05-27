@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dpcrawojad8co"]
+
+[ext_resource type="Script" uid="uid://crvmrmhkr5beu" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://ddqqoe0fpl8lt" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://dkgdsjmseh30x" path="res://DrinkQueue.gd" id="3_lquwl"]
+[ext_resource type="Script" uid="uid://bfqb7w8700mic" path="res://PlayerManager.gd" id="4_5vw27"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(1924, 24)
+
+[node name="Node2D" type="Node2D" unique_id=1327395544]
+script = ExtResource("1_0xm2m")
+
+[node name="Drinks" type="Node2D" parent="." unique_id=16088437]
+script = ExtResource("3_lquwl")
+
+[node name="Players" type="Node2D" parent="." unique_id=1544573814]
+script = ExtResource("4_5vw27")
+playerScene = ExtResource("1_ig7tw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=165603279]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2119747996]
+position = Vector2(960, 698)
+shape = SubResource("RectangleShape2D_1bvp3")

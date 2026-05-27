@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://nofgv8xian5w"]
+
+[ext_resource type="Script" uid="uid://dvodisu03lky3" path="res://drink.gd" id="1_n2nuc"]
+[ext_resource type="Texture2D" uid="uid://dn0guvyqrdwf8" path="res://icon.svg" id="2_arynu"]
+
+[node name="Node2D" type="Node2D" unique_id=952810989 groups=["DrinkSpots"]]
+script = ExtResource("1_n2nuc")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1704411427]
+texture = ExtResource("2_arynu")
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=44314190]
+position = Vector2(0, -769)
+
+[node name="BorderRed" type="ReferenceRect" parent="." unique_id=1682629676]
+offset_left = -192.0
+offset_top = -344.0
+offset_right = 192.0
+offset_bottom = 344.0
+border_width = 2.0
+editor_only = false
+
+[node name="BorderBlue" type="ReferenceRect" parent="." unique_id=1617488577]
+offset_left = -192.0
+offset_top = -344.0
+offset_right = 192.0
+offset_bottom = 344.0
+border_color = Color(0, 0, 1, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="BorderYellow" type="ReferenceRect" parent="." unique_id=491079053]
+offset_left = -192.0
+offset_top = -344.0
+offset_right = 192.0
+offset_bottom = 344.0
+border_color = Color(1, 1, 0, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="BorderGreen" type="ReferenceRect" parent="." unique_id=815120222]
+offset_left = -192.0
+offset_top = -344.0
+offset_right = 192.0
+offset_bottom = 344.0
+border_color = Color(0, 1, 0, 1)
+border_width = 2.0
+editor_only = false

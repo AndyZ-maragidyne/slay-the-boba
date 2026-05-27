@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b36cnotfu7dl3"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_wgsqe"]
+[ext_resource type="PackedScene" uid="uid://cr8v25y4p2h01" path="res://bobaItem.tscn" id="2_lclmr"]
+[ext_resource type="Script" uid="uid://cenmim38sb5m2" path="res://items/itemData.gd" id="2_rfslc"]
+
+[sub_resource type="Resource" id="Resource_lclmr"]
+script = ExtResource("2_rfslc")
+itemName = "Boba"
+category = 2
+metadata/_custom_type_script = "uid://cenmim38sb5m2"
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_wgsqe")]
+cardName = "Boba"
+item = ExtResource("2_lclmr")
+itemData = SubResource("Resource_lclmr")
+
+[node name="Label" type="Label" parent="." index="2" unique_id=1200822541]
+offset_left = -70.0
+offset_top = -101.0
+offset_bottom = -77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Boba"

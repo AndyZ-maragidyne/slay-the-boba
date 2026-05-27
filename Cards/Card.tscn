@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dhxpr3h06ogvy"]
+
+[ext_resource type="Script" uid="uid://b1fh7el2tsthj" path="res://card.gd" id="1_hael8"]
+[ext_resource type="Texture2D" uid="uid://dkg2et0rjnt1s" path="res://mad raabbit.png" id="2_21rx5"]
+
+[node name="Node2D" type="Node2D" unique_id=1288389349]
+script = ExtResource("1_hael8")
+
+[node name="MadRaabbit" type="Sprite2D" parent="." unique_id=288946348]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_21rx5")
+
+[node name="BorderRed" type="ReferenceRect" parent="." unique_id=954847474]
+offset_left = -73.0
+offset_top = -102.0
+offset_right = 72.0
+offset_bottom = 101.0
+border_width = 2.0
+editor_only = false
+
+[node name="BorderBlue" type="ReferenceRect" parent="." unique_id=903679077]
+offset_left = -73.0
+offset_top = -102.0
+offset_right = 72.0
+offset_bottom = 101.0
+border_color = Color(0, 0, 1, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="BorderYellow" type="ReferenceRect" parent="." unique_id=1963785853]
+offset_left = -73.0
+offset_top = -102.0
+offset_right = 72.0
+offset_bottom = 101.0
+border_color = Color(1, 1, 0, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="BorderGreen" type="ReferenceRect" parent="." unique_id=268276036]
+offset_left = -73.0
+offset_top = -102.0
+offset_right = 72.0
+offset_bottom = 101.0
+border_color = Color(0, 1, 0, 1)
+border_width = 2.0
+editor_only = false
