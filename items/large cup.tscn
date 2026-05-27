@@ -5,7 +5,7 @@
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_552sk"]
 a = Vector2(226, -423)
-b = Vector2(178, 435)
+b = Vector2(178, 432)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_tkrf6"]
 a = Vector2(-133, 431)

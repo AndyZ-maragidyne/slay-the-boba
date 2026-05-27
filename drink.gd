@@ -1,9 +1,9 @@
 extends Node2D
 
-@onready var borderRed: ReferenceRect = $BorderRed
-@onready var borderBlue: ReferenceRect = $BorderBlue
-@onready var borderYellow: ReferenceRect = $BorderYellow
-@onready var borderGreen: ReferenceRect = $BorderGreen
+@onready var borderRed: ReferenceRect = $Stuff/BorderRed
+@onready var borderBlue: ReferenceRect = $Stuff/BorderBlue
+@onready var borderYellow: ReferenceRect = $Stuff/BorderYellow
+@onready var borderGreen: ReferenceRect = $Stuff/BorderGreen
 
 var itemDatas: Array[ItemData] = []
 var placedItems:Array = []
@@ -31,7 +31,7 @@ func apply_card(card:Card) -> void:
 		add_child(newItem)
 		placedItems.append(newItem)
 		itemDatas.append(card.itemData)
-		newItem.position = $SpawnPoint.position
+		newItem.global_position = $Stuff/SpawnPoint.global_position
 	elif card.itemData.category == ItemData.Category.LIQUID:
 		var index = 0
 		for i in itemDatas:

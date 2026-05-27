@@ -69,7 +69,6 @@ func handle_drink_selection_input(event:InputEvent) -> void:
 			avaliable_spots[selected_drink_index].set_selected(false, deviceId)
 			
 		selected_drink_index = (selected_drink_index + 1) % avaliable_spots.size()
-		print(selected_drink_index)
 		if avaliable_spots[selected_drink_index]:
 			avaliable_spots[selected_drink_index].set_selected(true, deviceId)
 			
@@ -81,7 +80,6 @@ func handle_drink_selection_input(event:InputEvent) -> void:
 			selected_drink_index = avaliable_spots.size() - 1 
 		else:
 			selected_drink_index -= 1
-		print(selected_drink_index)
 		
 		if avaliable_spots[selected_drink_index]:
 			avaliable_spots[selected_drink_index].set_selected(true, deviceId)

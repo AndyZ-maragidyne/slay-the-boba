@@ -6,13 +6,15 @@
 [node name="Node2D" type="Node2D" unique_id=952810989 groups=["DrinkSpots"]]
 script = ExtResource("1_n2nuc")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1704411427]
+[node name="Stuff" type="Node2D" parent="." unique_id=651819829]
+
+[node name="Icon" type="Sprite2D" parent="Stuff" unique_id=1704411427]
 texture = ExtResource("2_arynu")
 
-[node name="SpawnPoint" type="Marker2D" parent="." unique_id=44314190]
+[node name="SpawnPoint" type="Marker2D" parent="Stuff" unique_id=44314190]
 position = Vector2(0, -769)
 
-[node name="BorderRed" type="ReferenceRect" parent="." unique_id=1682629676]
+[node name="BorderRed" type="ReferenceRect" parent="Stuff" unique_id=1682629676]
 offset_left = -192.0
 offset_top = -344.0
 offset_right = 192.0
@@ -20,7 +22,7 @@ offset_bottom = 344.0
 border_width = 2.0
 editor_only = false
 
-[node name="BorderBlue" type="ReferenceRect" parent="." unique_id=1617488577]
+[node name="BorderBlue" type="ReferenceRect" parent="Stuff" unique_id=1617488577]
 offset_left = -192.0
 offset_top = -344.0
 offset_right = 192.0
@@ -29,7 +31,7 @@ border_color = Color(0, 0, 1, 1)
 border_width = 2.0
 editor_only = false
 
-[node name="BorderYellow" type="ReferenceRect" parent="." unique_id=491079053]
+[node name="BorderYellow" type="ReferenceRect" parent="Stuff" unique_id=491079053]
 offset_left = -192.0
 offset_top = -344.0
 offset_right = 192.0
@@ -38,7 +40,7 @@ border_color = Color(1, 1, 0, 1)
 border_width = 2.0
 editor_only = false
 
-[node name="BorderGreen" type="ReferenceRect" parent="." unique_id=815120222]
+[node name="BorderGreen" type="ReferenceRect" parent="Stuff" unique_id=815120222]
 offset_left = -192.0
 offset_top = -344.0
 offset_right = 192.0
