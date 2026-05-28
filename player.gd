@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var deviceId: int = 0
+@export var playerId: int
 
 var endTurn: bool = false
 
@@ -38,11 +39,11 @@ func shuffle():
 	pass
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("X_%s" % deviceId):
+	if event.is_action_pressed("X_%s" % playerId) and event.device == deviceId:
 		#send order
 		get_parent().get_parent().get_node("Drinks").sendOrder()
 		pass
-	elif event.is_action_pressed("Y_%s" % deviceId):
+	elif event.is_action_pressed("Y_%s" % playerId) and event.device == deviceId:
 		#end turn
 		endTurn = !endTurn
 		if endTurn:

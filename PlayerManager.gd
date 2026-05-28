@@ -6,33 +6,34 @@ var activePlayers: Dictionary = {}
 var playersPlaying: Array[Node2D] = []
 
 func _ready() -> void:
-	Input.joy_connection_changed.connect(_on_joy_connection_changed)
+	var index = 0
+	for device_id in globals.joinedPlayers:
+		spawn_player(device_id, index)
+		index += 1
 	
-	var connected_joypads = Input.get_connected_joypads()
-	for device_id in connected_joypads:
-		spawn_player(device_id)
 	setPlayerPositions()
+	get_parent().startTurn()
 
-func _on_joy_connection_changed(device_id: int, connected:bool) -> void:
-	if connected:
-		spawn_player(device_id)
-	else:
-		remove_player(device_id)
+#func _on_joy_connection_changed(device_id: int, connected:bool) -> void:
+	#if connected:
+		#spawn_player(device_id)
+	#else:
+		#remove_player(device_id)
 
-func spawn_player(device_id: int) -> void:
+func spawn_player(device_id: int, player_id:int) -> void:
 	if activePlayers.has(device_id):
 		return
-	var joy_name = Input.get_joy_name(device_id)	
+	var joy_name = Input.get_joy_name(device_id)
 	print("Device ", device_id, " connected: ", joy_name)
-	if "Wii U Pro" in joy_name:
-		return
+	print("Playuer Id:" + str(player_id))
 	
 	if not playerScene:
-		print("No scene assigned in the inspector. Bro you're so bad. Lock in")
+		print("No scene assigned in the inspector.")
 		return
 	
 	var newPlayer = playerScene.instantiate()
 	newPlayer.deviceId = device_id
+	newPlayer.playerId = player_id
 	add_child(newPlayer)
 	newPlayer.global_position = Vector2(960, 800)
 	activePlayers[device_id] = newPlayer

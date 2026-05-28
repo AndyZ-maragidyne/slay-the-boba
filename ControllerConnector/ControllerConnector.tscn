@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c0pjn6nf4qxme"]
+
+[ext_resource type="Script" uid="uid://dsl4gfaspvtgj" path="res://ControllerConnector/ControllerManager.gd" id="1_f0v32"]
+[ext_resource type="Script" uid="uid://crduiu5bndgca" path="res://ControllerConnector/connectedControllersLabel.gd" id="2_kgrxa"]
+
+[node name="Node2D" type="Node2D" unique_id=1687085695]
+script = ExtResource("1_f0v32")
+
+[node name="ConnectedControllers" type="Label" parent="." unique_id=1981622837]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("2_kgrxa")
+
+[node name="P4" type="Label" parent="." unique_id=776857484]
+offset_left = 1436.0
+offset_top = 946.0
+offset_right = 1796.0
+offset_bottom = 1039.0
+theme_override_font_sizes/font_size = 30
+text = "P4"
+
+[node name="P3" type="Label" parent="." unique_id=1294699346]
+offset_left = 973.0
+offset_top = 888.0
+offset_right = 1333.0
+offset_bottom = 981.0
+theme_override_font_sizes/font_size = 30
+text = "P3"
+
+[node name="P2" type="Label" parent="." unique_id=1195833126]
+offset_left = 515.0
+offset_top = 850.0
+offset_right = 875.0
+offset_bottom = 943.0
+theme_override_font_sizes/font_size = 30
+text = "P2"
+
+[node name="P1" type="Label" parent="." unique_id=744892085]
+offset_left = 37.0
+offset_top = 809.0
+offset_right = 397.0
+offset_bottom = 902.0
+theme_override_font_sizes/font_size = 30
+text = "P1"

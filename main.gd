@@ -2,7 +2,6 @@ extends Node2D
 
 
 func ready():
-	startTurn()
 	pass
 
 func startTurn():

@@ -8,6 +8,7 @@
 script = ExtResource("2_rfslc")
 itemName = "Boba"
 category = 2
+pointValue = 3
 metadata/_custom_type_script = "uid://cenmim38sb5m2"
 
 [node name="Node2D" unique_id=1288389349 instance=ExtResource("1_wgsqe")]

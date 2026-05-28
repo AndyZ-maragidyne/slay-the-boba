@@ -7,6 +7,8 @@
 [sub_resource type="Resource" id="Resource_ujrhu"]
 script = ExtResource("3_p0sfg")
 itemName = "Large Cup"
+pointValue = 5
+size = 3
 metadata/_custom_type_script = "uid://cenmim38sb5m2"
 
 [node name="Node2D" unique_id=1288389349 instance=ExtResource("1_8hevf")]

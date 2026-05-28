@@ -23,3 +23,9 @@ playerScene = ExtResource("1_ig7tw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2119747996]
 position = Vector2(960, 698)
 shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Score" type="Label" parent="." unique_id=824507300]
+offset_right = 589.0
+offset_bottom = 186.0
+theme_override_font_sizes/font_size = 73
+text = "Score: 0"

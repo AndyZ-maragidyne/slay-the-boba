@@ -7,6 +7,8 @@
 script = ExtResource("2_kugce")
 itemName = "Water"
 category = 1
+pointValue = 2
+liquidType = 3
 color = Color(0.21568628, 0.49411765, 1, 1)
 metadata/_custom_type_script = "uid://cenmim38sb5m2"
 

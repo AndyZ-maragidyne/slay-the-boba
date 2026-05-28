@@ -3,6 +3,8 @@ extends Node2D
 const drinkScene = preload("res://drink.tscn")
 var drinkSpots: Array[Node]
 
+var score = 0
+
 func _ready() -> void:
 	addOrder()
 	addOrder()
@@ -37,7 +39,6 @@ func update_drink_layout():
 		var items = drink.get_children()
 		for asdf in items:
 			var rigidbodies = asdf.get_children()
-			print(rigidbodies.size())
 			for item in rigidbodies:
 				if item is RigidBody2D:
 					var distance_to_move: Vector2 = targetPos - item.global_position
@@ -63,7 +64,9 @@ func sendOrder():
 	#grab the first thing in the list
 	#see how much it scores
 	var drink = drinkSpots.pop_front()
-	#scoring
+	var drinkScore = drink.scoreDrink()
+	score += drinkScore
+	get_parent().get_node("Score").text = "Score: " + str(score)
 	drink.queue_free()
 	addOrder()
 	update_drink_layout()
