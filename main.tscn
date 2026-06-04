@@ -2,17 +2,30 @@
 
 [ext_resource type="Script" uid="uid://crvmrmhkr5beu" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://ddqqoe0fpl8lt" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://blqgwt20a004b" path="res://Untitled_-_May_19_2026_18.15.00asd.png" id="2_lquwl"]
 [ext_resource type="Script" uid="uid://dkgdsjmseh30x" path="res://DrinkQueue.gd" id="3_lquwl"]
 [ext_resource type="Script" uid="uid://bfqb7w8700mic" path="res://PlayerManager.gd" id="4_5vw27"]
+[ext_resource type="Script" uid="uid://2w3w36fpjmgb" path="res://mixingManager.gd" id="4_272bh"]
+[ext_resource type="Texture2D" uid="uid://brbv4j81x12if" path="res://picutres/progrees bar or something unfilled.png" id="7_5vw27"]
+[ext_resource type="Script" uid="uid://dotea11ibaekt" path="res://progressBar.gd" id="7_kek77"]
+[ext_resource type="Texture2D" uid="uid://eg4ak0ru5her" path="res://picutres/progrees bar or something.png" id="8_kek77"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
-size = Vector2(1924, 24)
+size = Vector2(1924, 60)
 
 [node name="Node2D" type="Node2D" unique_id=1327395544]
 script = ExtResource("1_0xm2m")
 
+[node name="Background" type="Sprite2D" parent="." unique_id=1874175453]
+position = Vector2(1062, 377)
+scale = Vector2(0.71642685, 0.71642685)
+texture = ExtResource("2_lquwl")
+
 [node name="Drinks" type="Node2D" parent="." unique_id=16088437]
 script = ExtResource("3_lquwl")
+
+[node name="Mixing" type="Node2D" parent="." unique_id=1004189839]
+script = ExtResource("4_272bh")
 
 [node name="Players" type="Node2D" parent="." unique_id=1544573814]
 script = ExtResource("4_5vw27")
@@ -21,11 +34,58 @@ playerScene = ExtResource("1_ig7tw")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=165603279]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2119747996]
-position = Vector2(960, 698)
+position = Vector2(965, 483)
 shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="Score" type="Label" parent="." unique_id=824507300]
 offset_right = 589.0
 offset_bottom = 186.0
-theme_override_font_sizes/font_size = 73
-text = "Score: 0"
+theme_override_font_sizes/font_size = 35
+text = "Goal: 0"
+
+[node name="TimeLeft" type="Label" parent="." unique_id=805827218]
+offset_left = 107.0
+offset_top = 44.0
+offset_right = 355.0
+offset_bottom = 104.0
+theme_override_font_sizes/font_size = 35
+text = "Time Left: 10"
+
+[node name="Coins" type="Label" parent="." unique_id=1743925641]
+offset_left = 111.0
+offset_top = 84.0
+offset_right = 301.0
+offset_bottom = 139.0
+theme_override_font_sizes/font_size = 35
+text = "Coins: 0"
+
+[node name="Progress" type="Node" parent="." unique_id=539631758]
+script = ExtResource("7_kek77")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="Progress" unique_id=628709082]
+offset_top = 43.0
+offset_right = 52.0
+offset_bottom = 1075.0
+value = 50.0
+fill_mode = 3
+texture_under = ExtResource("7_5vw27")
+texture_progress = ExtResource("8_kek77")
+
+[node name="Label" type="Label" parent="Progress" unique_id=1680830872]
+offset_left = 27.0
+offset_top = 31.0
+offset_right = 239.0
+offset_bottom = 86.0
+theme_override_font_sizes/font_size = 40
+text = "AAAAAAAA"
+
+[node name="AutosendWarning" type="Label" parent="." unique_id=765184359]
+visible = false
+offset_left = 1673.0
+offset_top = 13.0
+offset_right = 1915.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "Next order will auto send at the end of the turn"
+autowrap_mode = 3

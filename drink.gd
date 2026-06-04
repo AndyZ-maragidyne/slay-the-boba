@@ -4,7 +4,7 @@ extends Node2D
 @onready var borderBlue: ReferenceRect = $Stuff/BorderBlue
 @onready var borderYellow: ReferenceRect = $Stuff/BorderYellow
 @onready var borderGreen: ReferenceRect = $Stuff/BorderGreen
-
+@onready var score: Label = $Stuff/Score
 var itemDatas: Array[ItemData] = []
 var placedItems:Array = []
 
@@ -13,6 +13,8 @@ func _ready() -> void:
 	borderBlue.visible = false
 	borderYellow.visible = false
 	borderGreen.visible = false
+	score.text = str(scoreDrink())
+	
 
 func set_selected(is_selected: bool, deviceId) -> void:
 	match deviceId:
@@ -31,18 +33,19 @@ func apply_card(card:Card) -> void:
 		var newItem = card.item.instantiate()
 		add_child(newItem)
 		placedItems.append(newItem)
-		
 		newItem.global_position = $Stuff/SpawnPoint.global_position
-	elif card.itemData.category == ItemData.Category.LIQUID:
-		var index = 0
-		for i in itemDatas:
-			if i.category == ItemData.Category.CUP:
-				placedItems[index].setColor(card.itemData.color)
-				return
-			index += 1
-		pass
 	else:
-		print("card does not have an item to spawn")
+		placedItems.append(null)
+		if card.itemData.category == ItemData.Category.LIQUID:
+			var index = 0
+			for i in itemDatas:
+				if i.category == ItemData.Category.CUP:
+					placedItems[index].setColor(card.itemData.color)
+					score.text = str(scoreDrink())
+					return
+				index += 1
+			pass
+	score.text = str(scoreDrink())
 
 func scoreDrink():
 	#find where the first cup is
@@ -51,7 +54,7 @@ func scoreDrink():
 	var totalPoints = 0
 	var numLiquid = 0
 	var numToppings = 0
-	var maxThings
+	var maxThings = 0
 	var cup = false
 	for i in itemDatas:
 		#first, find the first cup. Lose a point for each ingredient thats not cup
@@ -90,10 +93,27 @@ func scoreDrink():
 					totalPoints += i.pointValue
 				else:
 					totalPoints -= 1
-	#empty cup loses a lot
+	if numLiquid < maxThings:
+		if maxThings == 2:
+			
+			var pointsLost = maxThings - numLiquid
+			print("Medium Cup not filled all the way. Losing " + str(pointsLost) + " points")
+			totalPoints -= pointsLost
+		elif maxThings == 3:
+			
+			var pointsLost = (maxThings - numLiquid) * 2
+			print("Large Cup not filled all the way. Losing " + str(pointsLost) + " points")
+			totalPoints -= pointsLost
 	if numLiquid == 0:
-		print("No liquid")
+		totalPoints -= 5
+	if !cup:
 		totalPoints -= 5
 	#nothing also loses a lot
 	return totalPoints
 	pass
+
+func scoreCoins():
+	var total = 0
+	for i in itemDatas:
+		total += i.coinValue
+	return total

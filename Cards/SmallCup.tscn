@@ -1,35 +1,38 @@
 [gd_scene format=3 uid="uid://b5eyrj7u5j1a6"]
 
 [ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_uquqk"]
-[ext_resource type="PackedScene" uid="uid://sut132ecpcrm" path="res://items/small cup.tscn" id="2_qoerj"]
+[ext_resource type="Script" uid="uid://b3rvn3pjpn84w" path="res://Cards/small_cup.gd" id="2_qoerj"]
 [ext_resource type="Script" uid="uid://cenmim38sb5m2" path="res://items/itemData.gd" id="3_4fjpl"]
+[ext_resource type="PackedScene" uid="uid://sut132ecpcrm" path="res://items/small cup.tscn" id="3_8r5tn"]
 
-[sub_resource type="Resource" id="Resource_8r5tn"]
+[sub_resource type="Resource" id="Resource_k4i2x"]
 script = ExtResource("3_4fjpl")
 itemName = "Small Cup"
 pointValue = 1
+coinValue = 1
 size = 1
 metadata/_custom_type_script = "uid://cenmim38sb5m2"
 
 [node name="Node2D" unique_id=1288389349 instance=ExtResource("1_uquqk")]
+script = ExtResource("2_qoerj")
+cost = 0
 cardName = "Small Cup"
-item = ExtResource("2_qoerj")
-itemData = SubResource("Resource_8r5tn")
+item = ExtResource("3_8r5tn")
+itemData = SubResource("Resource_k4i2x")
+spawnItem = true
 
-[node name="MadRaabbit" parent="." index="0" unique_id=288946348]
+[node name="Image" parent="." index="0" unique_id=288946348]
 scale = Vector2(0.4027778, 0.4027778)
 
-[node name="BorderRed" parent="." index="1" unique_id=954847474]
+[node name="Name" parent="." index="1" unique_id=913472170]
+text = "Small Cup
+"
+
+[node name="BorderRed" parent="." index="2" unique_id=954847474]
 offset_right = 73.0
 offset_bottom = 102.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="." index="2" unique_id=493746032]
-offset_left = -70.0
-offset_top = -99.0
-offset_right = 7.0
-offset_bottom = -76.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-text = "Small Cup"
-metadata/_edit_use_anchors_ = true
+[node name="Desc1" parent="." index="7" unique_id=546903617]
+text = "+999 Reputation
++999 coins"

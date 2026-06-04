@@ -7,19 +7,16 @@
 script = ExtResource("2_kugce")
 itemName = "Water"
 category = 1
-pointValue = 2
+pointValue = -10
+coinValue = 10
 liquidType = 3
 color = Color(0.21568628, 0.49411765, 1, 1)
 metadata/_custom_type_script = "uid://cenmim38sb5m2"
 
 [node name="Node2D" unique_id=1288389349 instance=ExtResource("1_6ldq1")]
+cost = 1
 cardName = "Water"
 itemData = SubResource("Resource_w8oig")
 
-[node name="Label" type="Label" parent="." index="2" unique_id=2015234535]
-offset_left = -69.0
-offset_top = -101.0
-offset_right = -22.0
-offset_bottom = -78.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="Name" parent="." index="1" unique_id=913472170]
 text = "Water"

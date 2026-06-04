@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bs2o2qpsl6n85"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_xx3wu"]
+[ext_resource type="Script" uid="uid://bhc81wxaow25n" path="res://Cards/Scripts/prepare_boba.gd" id="2_y0vk6"]
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_xx3wu")]
+script = ExtResource("2_y0vk6")
+cost = 1
+cardName = "Prepare Boba"
+description = "Shuffle 2 Boba into your draw pile"
+limitedUses = true
+maxUses = 2
+spawnItem = false
+
+[node name="Name" parent="." index="1" unique_id=913472170]
+text = "Prepare Boba"
+
+[node name="Desc2" parent="." index="8" unique_id=2118571226]
+text = "Shuffle 2 Boba into your draw pile"

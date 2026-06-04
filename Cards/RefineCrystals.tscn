@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dgkkpoyck74pn"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_sp7ou"]
+[ext_resource type="Script" uid="uid://dbj1sv7ergvi6" path="res://Cards/Scripts/refine_crystals.gd" id="2_w1yyb"]
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_sp7ou")]
+script = ExtResource("2_w1yyb")
+cost = 1
+cardName = "Refine Crystals"
+description = "Add 1 Crystal Boba to your discard pile"
+limitedUses = true
+maxUses = 1
+spawnItem = false

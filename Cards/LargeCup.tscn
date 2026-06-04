@@ -8,17 +8,16 @@
 script = ExtResource("3_p0sfg")
 itemName = "Large Cup"
 pointValue = 5
+coinValue = 1
 size = 3
 metadata/_custom_type_script = "uid://cenmim38sb5m2"
 
 [node name="Node2D" unique_id=1288389349 instance=ExtResource("1_8hevf")]
+cost = 2
+cardName = "Large Cup"
+description = "-2 Rep for each unfilled section"
 item = ExtResource("2_s4awu")
 itemData = SubResource("Resource_ujrhu")
 
-[node name="Label" type="Label" parent="." index="2" unique_id=321559290]
-offset_left = -70.0
-offset_top = -102.0
-offset_right = 104.0
-offset_bottom = -48.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="Name" parent="." index="1" unique_id=913472170]
 text = "Large Cup"

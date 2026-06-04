@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dx17la61qkusk"]
+
+[ext_resource type="PackedScene" uid="uid://bcw58khgniebe" path="res://Cards/TakeOrder.tscn" id="1_fhtkv"]
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_fhtkv")]
+limitedUses = true
+maxUses = 1

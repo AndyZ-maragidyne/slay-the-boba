@@ -1,7 +1,8 @@
 extends Node2D
 
 var iterations:int = 0
-@onready var bobaScene = preload("res://bobaSingular.tscn")
+
+@export var bobaScene = preload("res://bobaSingular.tscn")
 
 func _ready() -> void:
 	spawnBoba()

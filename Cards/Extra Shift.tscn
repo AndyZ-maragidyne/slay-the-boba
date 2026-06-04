@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d21k605bkis2d"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_5ofpr"]
+[ext_resource type="Script" uid="uid://ck4nxis2ve6jp" path="res://Cards/Scripts/extra_shift.gd" id="2_4t6ww"]
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_5ofpr")]
+script = ExtResource("2_4t6ww")
+cost = 2
+cardName = "Extra Shift"
+description = "Extend the time by 2"
+limitedUses = true
+maxUses = 1

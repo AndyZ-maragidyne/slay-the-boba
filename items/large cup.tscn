@@ -17,6 +17,7 @@ b = Vector2(-231, -425)
 
 [node name="LargeCup" type="Node2D" unique_id=2111407519]
 script = ExtResource("1_552sk")
+layers = 3
 
 [node name="Cup" type="RigidBody2D" parent="." unique_id=227560803]
 
@@ -24,7 +25,19 @@ script = ExtResource("1_552sk")
 visible = false
 position = Vector2(2, 1)
 scale = Vector2(1, 0.9936709)
-polygon = PackedVector2Array(108, -151.96178, 88, 215.36307, -69, 218.38219, -112, -151.96178)
+polygon = PackedVector2Array(93, 102.64969, 88, 215.36307, -69, 218.38219, -83, 102.64969)
+
+[node name="Color2" type="Polygon2D" parent="Cup" unique_id=17907933]
+visible = false
+position = Vector2(2, 1)
+scale = Vector2(1, 0.9936709)
+polygon = PackedVector2Array(103, -48.305737, 95, 102.64969, -83, 102.64969, -100, -48.305737)
+
+[node name="Color3" type="Polygon2D" parent="Cup" unique_id=241072197]
+visible = false
+position = Vector2(2, 1)
+scale = Vector2(1, 0.9936709)
+polygon = PackedVector2Array(108, -151.96178, 103, -48.305737, -100, -48.305737, -112, -151.96178)
 
 [node name="LargeCup" type="Sprite2D" parent="Cup" unique_id=199354108]
 scale = Vector2(0.5, 0.5)

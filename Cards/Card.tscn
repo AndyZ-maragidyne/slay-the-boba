@@ -1,14 +1,24 @@
 [gd_scene format=3 uid="uid://dhxpr3h06ogvy"]
 
 [ext_resource type="Script" uid="uid://b1fh7el2tsthj" path="res://card.gd" id="1_hael8"]
-[ext_resource type="Texture2D" uid="uid://dkg2et0rjnt1s" path="res://mad raabbit.png" id="2_21rx5"]
+[ext_resource type="Texture2D" uid="uid://47a80rgpj4xj" path="res://picutres/blacnk card.png" id="2_oclfm"]
 
 [node name="Node2D" type="Node2D" unique_id=1288389349]
 script = ExtResource("1_hael8")
 
-[node name="MadRaabbit" type="Sprite2D" parent="." unique_id=288946348]
+[node name="Image" type="Sprite2D" parent="." unique_id=288946348]
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_21rx5")
+texture = ExtResource("2_oclfm")
+
+[node name="Name" type="Label" parent="." unique_id=913472170]
+offset_left = -70.0
+offset_top = -99.0
+offset_right = 7.0
+offset_bottom = -76.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Name"
+metadata/_edit_use_anchors_ = true
 
 [node name="BorderRed" type="ReferenceRect" parent="." unique_id=954847474]
 offset_left = -73.0
@@ -44,3 +54,40 @@ offset_bottom = 101.0
 border_color = Color(0, 1, 0, 1)
 border_width = 2.0
 editor_only = false
+
+[node name="Cost" type="Label" parent="." unique_id=1864455245]
+offset_left = 38.0
+offset_top = -101.0
+offset_right = 75.0
+offset_bottom = -61.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 29
+text = "3"
+
+[node name="Desc1" type="Label" parent="." unique_id=546903617]
+offset_left = -70.0
+offset_top = -62.0
+offset_right = 14.0
+offset_bottom = -13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+999 Rep
++999 coins"
+
+[node name="Desc2" type="Label" parent="." unique_id=2118571226]
+offset_left = -69.0
+offset_top = -13.0
+offset_right = 71.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
+text = "This card does something"
+autowrap_mode = 3
+
+[node name="UsesLeft" type="Label" parent="." unique_id=2109200677]
+offset_left = -69.0
+offset_top = -78.0
+offset_right = -28.0
+offset_bottom = -55.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "1 use"

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://y3wvdfvybtmp"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_8llan"]
+[ext_resource type="Script" uid="uid://cenmim38sb5m2" path="res://items/itemData.gd" id="2_fcqxg"]
+
+[sub_resource type="Resource" id="Resource_ooa33"]
+script = ExtResource("2_fcqxg")
+itemName = "Milk Tea"
+category = 1
+pointValue = 2
+coinValue = 3
+liquidType = 1
+color = Color(0.8137349, 0.5102475, 0.37563685, 1)
+metadata/_custom_type_script = "uid://cenmim38sb5m2"
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_8llan")]
+cost = 1
+cardName = "Fresh Milk Tea"
+limitedUses = true
+maxUses = 1
+itemData = SubResource("Resource_ooa33")
+
+[node name="Name" parent="." index="1" unique_id=913472170]
+offset_left = -71.255
+offset_right = 40.880005
+text = "Fresh Milk Tea"

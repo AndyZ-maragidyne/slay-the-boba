@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d3kf77vyy41qt"]
+
+[ext_resource type="Script" uid="uid://d1l8hyith3yrn" path="res://boba_machine_shop.gd" id="1_0vp5s"]
+[ext_resource type="Texture2D" uid="uid://dp20wftbhpf1r" path="res://71SEe7mtNJL._AC_UF894,1000_QL80_.png" id="2_xt1k4"]
+
+[node name="Node2D" type="Node2D" unique_id=1095127527]
+script = ExtResource("1_0vp5s")
+
+[node name="BobaMachine" type="Sprite2D" parent="." unique_id=876090333]
+scale = Vector2(0.25538546, 0.25538546)
+texture = ExtResource("2_xt1k4")

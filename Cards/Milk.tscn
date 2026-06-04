@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://58dmhl6wr51f"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_3j6le"]
+[ext_resource type="Script" uid="uid://cenmim38sb5m2" path="res://items/itemData.gd" id="2_4bcac"]
+
+[sub_resource type="Resource" id="Resource_2ui7b"]
+script = ExtResource("2_4bcac")
+itemName = "Milk"
+category = 1
+pointValue = 1
+coinValue = 1
+liquidType = 1
+metadata/_custom_type_script = "uid://cenmim38sb5m2"
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_3j6le")]
+cardName = "Milk"
+limitedUses = true
+maxUses = 1
+itemData = SubResource("Resource_2ui7b")

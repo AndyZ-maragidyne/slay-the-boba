@@ -2,13 +2,15 @@ extends Node2D
 
 @export var playerScene: PackedScene
 
+#Keeps track of every player
 var activePlayers: Dictionary = {}
+#Idk what this is it's literally not used
 var playersPlaying: Array[Node2D] = []
 
 func _ready() -> void:
 	var index = 0
 	for device_id in globals.joinedPlayers:
-		spawn_player(device_id, index)
+		spawn_player(device_id, index, globals.playerData[index])
 		index += 1
 	
 	setPlayerPositions()
@@ -20,7 +22,7 @@ func _ready() -> void:
 	#else:
 		#remove_player(device_id)
 
-func spawn_player(device_id: int, player_id:int) -> void:
+func spawn_player(device_id: int, player_id:int, playerData:PlayerData) -> void:
 	if activePlayers.has(device_id):
 		return
 	var joy_name = Input.get_joy_name(device_id)
@@ -34,6 +36,14 @@ func spawn_player(device_id: int, player_id:int) -> void:
 	var newPlayer = playerScene.instantiate()
 	newPlayer.deviceId = device_id
 	newPlayer.playerId = player_id
+	for card in globals.playerDecks[player_id]:
+		newPlayer.deck.append(card.duplicate())
+	newPlayer.deck.shuffle()
+	
+	#playerData.coins
+	newPlayer.coins = playerData.coins
+	newPlayer.maxEnergy = playerData.maxEnergy
+	
 	add_child(newPlayer)
 	newPlayer.global_position = Vector2(960, 800)
 	activePlayers[device_id] = newPlayer
@@ -56,7 +66,7 @@ func setPlayerPositions():
 	var playingPlayers = []
 	for k in keys:
 		var currentPlayer = activePlayers.get(k)
-		if !currentPlayer.endTurn:
+		if !currentPlayer.endTurn and !currentPlayer.hide:
 			playingPlayers.append(currentPlayer)
 	var list = []
 	var index = 0

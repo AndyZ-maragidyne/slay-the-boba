@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cbkgy8vatrsup"]
+
+[ext_resource type="Script" uid="uid://bubv6pyp7rb5y" path="res://store_shelf.gd" id="1_jdi0v"]
+
+[node name="StoreShelf" type="Node2D" unique_id=1804876247]
+script = ExtResource("1_jdi0v")

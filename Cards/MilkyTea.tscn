@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cvmqe3wx5ko30"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_jtws8"]
+[ext_resource type="Script" uid="uid://cenmim38sb5m2" path="res://items/itemData.gd" id="2_ng8mi"]
+
+[sub_resource type="Resource" id="Resource_jvum1"]
+script = ExtResource("2_ng8mi")
+itemName = "Milky Tea"
+category = 1
+pointValue = 1
+coinValue = 2
+liquidType = 1
+color = Color(0.6314813, 0.36253166, 0.24344769, 1)
+metadata/_custom_type_script = "uid://cenmim38sb5m2"
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_jtws8")]
+cost = 1
+cardName = "Milky Tea"
+limitedUses = true
+maxUses = 1
+itemData = SubResource("Resource_jvum1")

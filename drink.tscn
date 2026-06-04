@@ -9,42 +9,53 @@ script = ExtResource("1_n2nuc")
 [node name="Stuff" type="Node2D" parent="." unique_id=651819829]
 
 [node name="Icon" type="Sprite2D" parent="Stuff" unique_id=1704411427]
+visible = false
 texture = ExtResource("2_arynu")
 
 [node name="SpawnPoint" type="Marker2D" parent="Stuff" unique_id=44314190]
 position = Vector2(0, -769)
 
 [node name="BorderRed" type="ReferenceRect" parent="Stuff" unique_id=1682629676]
-offset_left = -192.0
-offset_top = -344.0
+offset_left = -191.0
+offset_top = -342.0
 offset_right = 192.0
-offset_bottom = 344.0
+offset_bottom = 69.0
 border_width = 2.0
 editor_only = false
 
 [node name="BorderBlue" type="ReferenceRect" parent="Stuff" unique_id=1617488577]
 offset_left = -192.0
-offset_top = -344.0
-offset_right = 192.0
-offset_bottom = 344.0
+offset_top = -343.0
+offset_right = 193.0
+offset_bottom = 70.0
 border_color = Color(0, 0, 1, 1)
 border_width = 2.0
 editor_only = false
 
 [node name="BorderYellow" type="ReferenceRect" parent="Stuff" unique_id=491079053]
-offset_left = -192.0
+offset_left = -193.0
 offset_top = -344.0
-offset_right = 192.0
-offset_bottom = 344.0
+offset_right = 194.0
+offset_bottom = 71.0
 border_color = Color(1, 1, 0, 1)
 border_width = 2.0
 editor_only = false
 
 [node name="BorderGreen" type="ReferenceRect" parent="Stuff" unique_id=815120222]
-offset_left = -192.0
-offset_top = -344.0
-offset_right = 192.0
-offset_bottom = 344.0
+offset_left = -194.0
+offset_top = -345.0
+offset_right = 195.0
+offset_bottom = 72.0
 border_color = Color(0, 1, 0, 1)
 border_width = 2.0
 editor_only = false
+
+[node name="Score" type="Label" parent="Stuff" unique_id=34771381]
+offset_left = -39.0
+offset_top = -358.0
+offset_right = 33.0
+offset_bottom = -271.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 63
+text = "99"
+horizontal_alignment = 1

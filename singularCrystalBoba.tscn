@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://btx8cte6bdlvr"]
+
+[ext_resource type="Texture2D" uid="uid://f6n70xfopnp6" path="res://picutres/crystal boba.png" id="1_xmj3m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nb6ab"]
+radius = 26.0
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1207375675]
+
+[node name="CrystalBoba" type="Sprite2D" parent="." unique_id=627586335]
+texture = ExtResource("1_xmj3m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2106663529]
+shape = SubResource("CircleShape2D_nb6ab")

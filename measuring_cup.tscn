@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://4ta0v52u7p2n"]
+
+[ext_resource type="Script" uid="uid://b7aa25ivqicaf" path="res://measuringCup.gd" id="1_qrpxs"]
+[ext_resource type="Texture2D" uid="uid://hqiv0jgf28xv" path="res://picutres/measuring cup.png" id="2_p1imx"]
+
+[node name="MeasuringCup" type="Node2D" unique_id=646859662]
+script = ExtResource("1_qrpxs")
+
+[node name="Color" type="Polygon2D" parent="." unique_id=1513240772]
+visible = false
+polygon = PackedVector2Array(-101, -49, -99, -15, -90, 55, -87, 63, -85, 71, -74, 83, -62, 87, 19, 88, 35, 82, 43, 70, 48, 51, 58, -49)
+
+[node name="MeasuringCup" type="Sprite2D" parent="." unique_id=1303389303]
+position = Vector2(0, 5.9604645e-08)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_p1imx")
+
+[node name="BorderRed" type="ReferenceRect" parent="." unique_id=153293786]
+offset_left = -133.0
+offset_top = -93.0
+offset_right = 134.0
+offset_bottom = 100.0
+border_width = 2.0
+editor_only = false
+
+[node name="BorderBlue" type="ReferenceRect" parent="." unique_id=206776848]
+offset_left = -134.0
+offset_top = -94.0
+offset_right = 135.0
+offset_bottom = 101.0
+border_color = Color(0, 0, 1, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="BorderYellow" type="ReferenceRect" parent="." unique_id=1904808813]
+offset_left = -135.0
+offset_top = -95.0
+offset_right = 136.0
+offset_bottom = 102.0
+border_color = Color(1, 1, 0, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="BorderGreen" type="ReferenceRect" parent="." unique_id=303208703]
+offset_left = -136.0
+offset_top = -96.0
+offset_right = 137.0
+offset_bottom = 103.0
+border_color = Color(0, 1, 0, 1)
+border_width = 2.0
+editor_only = false

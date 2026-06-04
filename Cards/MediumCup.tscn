@@ -7,19 +7,17 @@
 [sub_resource type="Resource" id="Resource_2ve2q"]
 script = ExtResource("3_8cpkr")
 itemName = "Medium Cup"
-size = 2
 pointValue = 3
+coinValue = 1
+size = 2
 metadata/_custom_type_script = "uid://cenmim38sb5m2"
 
 [node name="Node2D" unique_id=1288389349 instance=ExtResource("1_6kcqb")]
+cost = 1
 cardName = "Medium Cup"
+description = "-1 Rep for each unfilled section"
 item = ExtResource("2_rjlwe")
 itemData = SubResource("Resource_2ve2q")
 
-[node name="Label" type="Label" parent="." index="2" unique_id=856382457]
-offset_left = -72.0
-offset_top = -102.0
-offset_right = 149.0
-offset_bottom = -48.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="Name" parent="." index="1" unique_id=913472170]
 text = "Medium Cup"

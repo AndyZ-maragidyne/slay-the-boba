@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://x8bysgo140g7"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_86ext"]
+[ext_resource type="Script" uid="uid://0ar6dpmob5rr" path="res://Cards/Scripts/energy_drink.gd" id="2_6k1rj"]
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_86ext")]
+script = ExtResource("2_6k1rj")
+cost = 3
+cardName = "Energy Drink"
+description = "Raise Max Energy by 1"
+limitedUses = true
+maxUses = 1
+spawnItem = false

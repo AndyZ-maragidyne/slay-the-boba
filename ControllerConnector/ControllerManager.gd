@@ -4,6 +4,12 @@ extends Node2D
 var controllers:Array[int] = []
 var playerOrder:Array[int] = []
 
+func _ready() -> void:
+	$P1.text = "Press X to connect..."
+	$P2.text = "Press X to connect..."
+	$P3.text = "Press X to connect..."
+	$P4.text = "Press X to connect..."
+	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("A"):
 		print("pressed")
@@ -47,4 +53,51 @@ func displayPlayers():
 
 func startGame():
 	globals.joinedPlayers = playerOrder
+	initializeDecks()
 	get_tree().change_scene_to_file("res://main.tscn")
+
+func initializeDecks():
+	var smallCup = preload("res://Cards/SmallCup.tscn")
+	var mediumCup = preload("res://Cards/MediumCup.tscn")
+	var largeCup = preload("res://Cards/LargeCup.tscn")
+	var takeOrder = preload("res://Cards/TakeOrder.tscn")
+	var milkyTea = preload("res://Cards/MilkyTea.tscn")
+	var instantBoba = preload("res://Cards/InstantTapioca.tscn")
+	var index = 0
+	for p in globals.joinedPlayers:
+		var newCard = smallCup.instantiate()
+		globals.playerDecks[index].append(newCard)
+		newCard = smallCup.instantiate()
+		globals.playerDecks[index].append(newCard)
+		newCard = mediumCup.instantiate()
+		globals.playerDecks[index].append(newCard)
+		newCard = mediumCup.instantiate()
+		globals.playerDecks[index].append(newCard)
+		newCard = largeCup.instantiate()
+		globals.playerDecks[index].append(newCard)
+		newCard = takeOrder.instantiate()
+		globals.playerDecks[index].append(newCard)
+		newCard = takeOrder.instantiate()
+		globals.playerDecks[index].append(newCard)
+		newCard = milkyTea.instantiate()
+		globals.playerDecks[index].append(newCard)
+		newCard = milkyTea.instantiate()
+		globals.playerDecks[index].append(newCard)
+		newCard = milkyTea.instantiate()
+		globals.playerDecks[index].append(newCard)
+		newCard = milkyTea.instantiate()
+		globals.playerDecks[index].append(newCard)
+		newCard = milkyTea.instantiate()
+		globals.playerDecks[index].append(newCard)
+		newCard = instantBoba.instantiate()
+		globals.playerDecks[index].append(newCard)
+		newCard = instantBoba.instantiate()
+		globals.playerDecks[index].append(newCard)
+		newCard = instantBoba.instantiate()
+		globals.playerDecks[index].append(newCard)
+		newCard = instantBoba.instantiate()
+		globals.playerDecks[index].append(newCard)
+		newCard = instantBoba.instantiate()
+		globals.playerDecks[index].append(newCard)
+		index += 1
+	

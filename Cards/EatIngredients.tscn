@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dhxm0l1pbh6o6"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_8taj4"]
+[ext_resource type="Script" uid="uid://cvidsio2tf68a" path="res://Cards/Scripts/eat_ingredients.gd" id="2_k4x43"]
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_8taj4")]
+script = ExtResource("2_k4x43")
+cardName = "Eat Ingredients"
+description = "+1 Energy
+-1 Rep"
+limitedUses = true
+maxUses = 1

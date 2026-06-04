@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c8s8m3fa1eepc"]
+
+[ext_resource type="Script" uid="uid://dy7d2aw4asjqc" path="res://Shop/ShopItem.gd" id="1_k8r3s"]
+
+[node name="ShopItem" type="Node2D" unique_id=2110888813]
+script = ExtResource("1_k8r3s")
+
+[node name="Cost" type="Label" parent="." unique_id=1792306114]
+offset_left = -20.0
+offset_top = -88.0
+offset_right = 20.0
+offset_bottom = -65.0

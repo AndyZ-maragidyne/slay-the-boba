@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bvylkr5mgkrmq"]
+
+[ext_resource type="PackedScene" uid="uid://c8s8m3fa1eepc" path="res://Shop/ShopItems/shop_item.tscn" id="1_5asvx"]
+[ext_resource type="PackedScene" uid="uid://ddjdb5r7cwixq" path="res://Cards/InstantTapioca.tscn" id="2_8ycy6"]
+
+[node name="ShopItem" unique_id=2110888813 instance=ExtResource("1_5asvx")]
+Item = ExtResource("2_8ycy6")

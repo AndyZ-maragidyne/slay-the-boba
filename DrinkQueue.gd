@@ -3,13 +3,9 @@ extends Node2D
 const drinkScene = preload("res://drink.tscn")
 var drinkSpots: Array[Node]
 
-var score = 0
 
 func _ready() -> void:
-	addOrder()
-	addOrder()
-	addOrder()
-	addOrder()
+	#addOrder()
 	update_drink_layout()
 
 func addOrder():
@@ -48,11 +44,12 @@ func update_drink_layout():
 					item.linear_velocity = Vector2(required_velocity.x, 1)
 		get_tree().create_timer(slide_time).timeout.connect(func():
 			for asdf in items:
-				var rigidbodies = asdf.get_children()
-				for item in rigidbodies:
-					if item is RigidBody2D:
-						item.linear_velocity = Vector2.ZERO
-						item.gravity_scale = 1.0
+				if is_instance_valid(asdf):
+					var rigidbodies = asdf.get_children()
+					for item in rigidbodies:
+						if item is RigidBody2D:
+							item.linear_velocity = Vector2.ZERO
+							item.gravity_scale = 1.0
 		)
 	#discard_tween.tween_property(drinkSpots[0], "position", Vector2(1612, 378), 0.4)
 	#discard_tween.tween_property(drinkSpots[1], "position", Vector2(1179, 378), 0.4)
@@ -61,12 +58,19 @@ func update_drink_layout():
 	pass
 
 func sendOrder():
+	var drinkScore = 0
+	var coinScore = 0
+	if drinkSpots.size() > 0:
 	#grab the first thing in the list
 	#see how much it scores
-	var drink = drinkSpots.pop_front()
-	var drinkScore = drink.scoreDrink()
-	score += drinkScore
-	get_parent().get_node("Score").text = "Score: " + str(score)
-	drink.queue_free()
-	addOrder()
+		var drink = drinkSpots.pop_front()
+		drinkScore = drink.scoreDrink()
+		coinScore = drink.scoreCoins()
+		drink.queue_free()
+	else:
+		drinkScore = -10
+	get_parent().modifyRep(drinkScore)
+	get_parent().modifyCoins(coinScore)
+	get_parent().get_node("Score").text = "Rep: " + str(get_parent().rep)
+
 	update_drink_layout()

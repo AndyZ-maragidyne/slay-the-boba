@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://che14eokedqkp"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_dntsx"]
+[ext_resource type="Script" uid="uid://cs73wsd32a05a" path="res://Cards/Scripts/clean.gd" id="2_81jse"]
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_dntsx")]
+script = ExtResource("2_81jse")
+cardName = "Clean"
+description = "Increase Rep by 5
+Increase cost by 1"
+spawnItem = false

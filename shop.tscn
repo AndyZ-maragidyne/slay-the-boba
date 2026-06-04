@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://rcsrdxt0fjtd"]
+
+[ext_resource type="Script" uid="uid://tohbvg4igs20" path="res://shop.gd" id="1_viryw"]
+[ext_resource type="PackedScene" uid="uid://cbkgy8vatrsup" path="res://store_shelf.tscn" id="2_e7rdd"]
+[ext_resource type="Texture2D" uid="uid://blqgwt20a004b" path="res://Untitled_-_May_19_2026_18.15.00asd.png" id="2_k3iel"]
+[ext_resource type="PackedScene" uid="uid://vbmtijwgma3y" path="res://Shop/ShopPlayer.tscn" id="4_6lah5"]
+[ext_resource type="Script" uid="uid://cg46e30ak6tpa" path="res://playerManagerShop.gd" id="7_8kdgp"]
+
+[node name="Shop" type="Node2D" unique_id=1168581076]
+script = ExtResource("1_viryw")
+
+[node name="UntitledMay19202618_15_00Asd" type="Sprite2D" parent="." unique_id=1522895285]
+position = Vector2(469, -396)
+scale = Vector2(1.765, 1.765)
+texture = ExtResource("2_k3iel")
+
+[node name="cards" type="Label" parent="." unique_id=1602458789]
+offset_left = 1200.0
+offset_right = 1685.0
+offset_bottom = 166.0
+theme_override_font_sizes/font_size = 62
+text = "Buy some cards"
+
+[node name="StoreShelf" parent="." unique_id=2143976579 instance=ExtResource("2_e7rdd")]
+visible = false
+position = Vector2(1403, 200)
+itemPool = Array[Node2D]([null])
+
+[node name="StoreShelf2" parent="." unique_id=1804876247 instance=ExtResource("2_e7rdd")]
+visible = false
+position = Vector2(1440, 420)
+
+[node name="StoreShelf3" parent="." unique_id=211701911 instance=ExtResource("2_e7rdd")]
+visible = false
+position = Vector2(1440, 635)
+
+[node name="StoreShelf4" parent="." unique_id=908958416 instance=ExtResource("2_e7rdd")]
+visible = false
+position = Vector2(1440, 854)
+
+[node name="lock2" type="Label" parent="." unique_id=1670350497]
+offset_left = 1233.0
+offset_top = 368.0
+offset_right = 1654.0
+offset_bottom = 509.0
+theme_override_font_sizes/font_size = 60
+text = "Survive Day 2"
+
+[node name="lock3" type="Label" parent="." unique_id=1733863336]
+offset_left = 1233.0
+offset_top = 587.0
+offset_right = 1654.0
+offset_bottom = 728.0
+theme_override_font_sizes/font_size = 60
+text = "Survive Day 3"
+
+[node name="lock4" type="Label" parent="." unique_id=1457555322]
+offset_left = 1233.0
+offset_top = 800.0
+offset_right = 1654.0
+offset_bottom = 941.0
+theme_override_font_sizes/font_size = 60
+text = "Survive Day 4"
+
+[node name="upgrades(store)" type="Label" parent="." unique_id=1895644386]
+offset_left = 50.0
+offset_right = 563.0
+offset_bottom = 166.0
+theme_override_font_sizes/font_size = 62
+text = "Upgrades"
+
+[node name="Players" type="Node2D" parent="." unique_id=207404711]
+script = ExtResource("7_8kdgp")
+playerScene = ExtResource("4_6lah5")
+
+[node name="Upgrades" type="Node2D" parent="." unique_id=245110207]
+
+[node name="lock3" type="Label" parent="Upgrades" unique_id=788822459]
+offset_left = 19.0
+offset_top = 200.0
+offset_right = 794.0
+offset_bottom = 621.0
+theme_override_font_sizes/font_size = 60
+text = "Coming soon. Ngl this code is so bad im not making this rn"
+autowrap_mode = 3

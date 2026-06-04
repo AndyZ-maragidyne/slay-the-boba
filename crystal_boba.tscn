@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d0otaoiqfglfw"]
+
+[ext_resource type="Script" uid="uid://ubvmwsnq0vxk" path="res://bobaItem.gd" id="1_fip6u"]
+[ext_resource type="PackedScene" uid="uid://btx8cte6bdlvr" path="res://singularCrystalBoba.tscn" id="2_cfyas"]
+
+[node name="CrystalBoba" type="Node2D" unique_id=1900323783]
+script = ExtResource("1_fip6u")
+bobaScene = ExtResource("2_cfyas")
+
+[node name="Timer" type="Timer" parent="." unique_id=1392866333]
+wait_time = 0.2
+one_shot = true

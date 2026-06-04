@@ -7,7 +7,8 @@ extends Node2D
 @export var rotation_curve:float = 6.0
 @export var animation_speed:float = 0.3
 
-enum selectState { SELECTING_CARD, SELECTING_DRINK }
+#Other is currently used for if the player is selecting a mixing cup without having a card selected
+enum selectState { SELECTING_CARD, SELECTING_DRINK, OTHER }
 var currentState: selectState = selectState.SELECTING_CARD
 
 var playerId
@@ -17,7 +18,9 @@ var deck: Array[Node2D]
 var discard: Array[Node2D]
 var selected_index = -1
 
-var avaliable_spots: Array[Node]
+var avaliable_spots: Array[Array]
+#This is used to tell whether the selector is on the drinkSpots or the mixingSpots
+var selectedRow = 0
 var selected_drink_index = -1
 
 @onready var player = get_parent()
@@ -30,7 +33,8 @@ func _ready() -> void:
 		hand = get_parent().hand
 		deck = get_parent().deck
 		discard = get_parent().discard
-	avaliable_spots =  get_node("../../../Drinks").drinkSpots
+	avaliable_spots.append(get_node("../../../Drinks").drinkSpots)
+	avaliable_spots.append(get_node("../../../Mixing").mixingSpots)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
@@ -43,6 +47,8 @@ func _input(event: InputEvent) -> void:
 		handle_card_selection_input(event)
 	elif currentState == selectState.SELECTING_DRINK:
 		handle_drink_selection_input(event)
+	elif currentState == selectState.OTHER:
+		return
 	
 func handle_card_selection_input(event:InputEvent) -> void:
 	if event.is_action_pressed("Select_R_%s" % playerId) and event.device == deviceId:
@@ -59,81 +65,121 @@ func handle_card_selection_input(event:InputEvent) -> void:
 	elif event.is_action_pressed("A_%s" % playerId) and selected_index != -1 and event.device == deviceId:
 		if hand[selected_index]:
 			hand[selected_index].set_selected(false, playerId)
-		enter_targeting_mode()
+			if hand[selected_index].spawnItem:
+				enter_targeting_mode()
+			else:
+				if hand[selected_index].cost <= get_parent().energy:
+					playCardNoDrink(hand[selected_index])
+				else:
+					if hand[selected_index]:
+						hand[selected_index].set_selected(true, playerId)
 
 func handle_drink_selection_input(event:InputEvent) -> void:
-	if avaliable_spots.size() == 0:
+	if avaliable_spots[selectedRow].size() == 0:
 		exit_targeting_mode()
 		return
 	
-	if event.is_action_pressed("Select_L_%s" % playerId) and event.device == deviceId:
-		if avaliable_spots[selected_drink_index]:
-			avaliable_spots[selected_drink_index].set_selected(false, playerId)
-			
-		selected_drink_index = (selected_drink_index + 1) % avaliable_spots.size()
-		if avaliable_spots[selected_drink_index]:
-			avaliable_spots[selected_drink_index].set_selected(true, playerId)
-			
-	elif event.is_action_pressed("Select_R_%s" % playerId) and event.device == deviceId:
-		if avaliable_spots[selected_drink_index]:
-			avaliable_spots[selected_drink_index].set_selected(false, playerId)
+	if event.is_action_pressed("Select_L_%s" % playerId) and event.device == deviceId or event.is_action_pressed("Left_%s" % playerId) and event.device == deviceId:
+		var current_spot = get_active_spot()
+		if current_spot != null:
+			current_spot.set_selected(false, playerId)
+
+		selected_drink_index = (selected_drink_index + 1) % avaliable_spots[selectedRow].size()
+
+		var new_spot = get_active_spot()
+		if new_spot != null:
+			new_spot.set_selected(true, playerId)
+	elif event.is_action_pressed("Select_R_%s" % playerId) and event.device == deviceId or event.is_action_pressed("Right_%s" % playerId) and event.device == deviceId:
+		var new_spot = get_active_spot()
+		if new_spot != null:
+			new_spot.set_selected(false, playerId)
 			
 		if selected_drink_index <= 0:
-			selected_drink_index = avaliable_spots.size() - 1 
+			selected_drink_index = avaliable_spots[selectedRow].size() - 1 
 		else:
 			selected_drink_index -= 1
 		
-		if avaliable_spots[selected_drink_index]:
-			avaliable_spots[selected_drink_index].set_selected(true, playerId)
+		new_spot = get_active_spot()
+		if new_spot != null:
+			new_spot.set_selected(true, playerId)
 	
 	elif event.is_action_pressed("A_%s" % playerId) and event.device == deviceId:
-		if avaliable_spots[selected_drink_index]:
-			avaliable_spots[selected_drink_index].set_selected(false, playerId)
+		if avaliable_spots[selectedRow][selected_drink_index]:
+			avaliable_spots[selectedRow][selected_drink_index].set_selected(false, playerId)
 		play_selected_card()
 	
 	elif event.is_action_pressed("B_%s" % playerId) and event.device == deviceId:
-		if avaliable_spots[selected_drink_index]:
-			avaliable_spots[selected_drink_index].set_selected(false, playerId)
+		var new_spot = get_active_spot()
+		if new_spot != null:
+			new_spot.set_selected(false, playerId)
 		if hand[selected_index]:
 			hand[selected_index].set_selected(true, playerId)
 		exit_targeting_mode()
+	elif event.is_action_pressed("Up_%s" % playerId) and event.device == deviceId:
+		if selectedRow == 1:
+			var new_spot = get_active_spot()
+			if new_spot != null:
+				new_spot.set_selected(false, playerId)
+			
+			selectedRow = 0
+			selected_drink_index = 0
 
+			new_spot = get_active_spot()
+			if new_spot != null:
+				new_spot.set_selected(true, playerId)
+	elif event.is_action_pressed("Down_%s" % playerId) and event.device == deviceId:
+		if selectedRow == 0:
+			var new_spot = get_active_spot()
+			if new_spot != null:
+				new_spot.set_selected(false, playerId)
+			selectedRow = 1
+			if selected_drink_index >= 2:
+				selected_drink_index = 1
+			else:
+				selected_drink_index = 0
+			new_spot = get_active_spot()
+			if new_spot != null:
+				new_spot.set_selected(true, playerId)
+	
 func enter_targeting_mode() -> void:
 	
 	if avaliable_spots.size() == 0:
 		print("No drink spots")
 		return
-	
+
 	currentState = selectState.SELECTING_DRINK
 	if selected_drink_index == -1:
 		selected_drink_index = 0
-	if avaliable_spots[selected_drink_index]:
-			avaliable_spots[selected_drink_index].set_selected(true, playerId)
+		selectedRow = 0
+		
+	var spot = get_active_spot()
+	if spot != null:
+		spot.set_selected(true, playerId)
+	elif avaliable_spots[1] and avaliable_spots[1][selected_drink_index]:
+		selectedRow = 1
+		avaliable_spots[1][selected_drink_index].set_selected(true, playerId)
+	else:
+		hand[selected_index].set_selected(true, playerId)
 	
 func exit_targeting_mode() -> void:
 	currentState = selectState.SELECTING_CARD
-
-#lol am I using this?	
-#func update_reticle_position() -> void:
-	#if not reticle or available_spots.size() == 0: return
-	#
-	#var target_spot = available_spots[selected_spot_index] as Node2D
-	#
-	## Smoothly slide a targeting reticle/arrow to the active spot's position
-	#var tween = create_tween()
-	#tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	## global_position maps coordinates accurately regardless of where the HandManager is located
-	#tween.tween_property(reticle, "global_position", target_spot.global_position, 0.15)
 	
 func play_selected_card() -> void:
 	if selected_index == -1 or hand.size() == 0:
 		return
 		
 	var card_to_play = hand[selected_index]
-	var chosen_drink = avaliable_spots[selected_drink_index]
+	if card_to_play.cost > get_parent().energy:
+		var new_spot = get_active_spot()
+		if new_spot != null:
+			new_spot.set_selected(true, playerId)
+		return
 	
 	#play card
-	chosen_drink.apply_card(card_to_play)
+	useCard(card_to_play)
+	if card_to_play.spawnItem:
+		var chosen_drink = avaliable_spots[selectedRow][selected_drink_index]
+		chosen_drink.apply_card(card_to_play)
 	
 	hand.remove_at(selected_index)
 	
@@ -145,8 +191,7 @@ func play_selected_card() -> void:
 	discard_tween.tween_property(card_to_play, "scale", Vector2(0.5, 0.5), 0.4)
 	
 	discard_tween.chain().tween_callback(func():
-		remove_child(card_to_play)
-		discard.append(card_to_play)
+		discardCard(card_to_play)
 		)
 	
 	if hand.size() == 0:
@@ -156,7 +201,29 @@ func play_selected_card() -> void:
 	
 	update_hand_layout()
 	exit_targeting_mode()
-	
+
+func playCardNoDrink(theCard: Card):
+	useCard(theCard)
+	hand.remove_at(selected_index)
+	discardCard(theCard)
+	if hand.size() == 0:
+		selected_index = -1
+	elif selected_index >= hand.size():
+		selected_index = hand.size() - 1
+	update_hand_layout()
+
+func useCard(card_to_play:Card):
+	card_to_play.onPlay()
+	get_parent().energy -= card_to_play.cost
+	get_parent().updateEnergy()
+
+func discardCard(card_to_play:Card):
+	if card_to_play.limitedUses and card_to_play.uses <= 0:
+		card_to_play.queue_free()
+	else:
+		remove_child(card_to_play)
+		discard.append(card_to_play)
+
 func draw_card() -> void:
 	var new_card
 	if deck.size() > 0:
@@ -206,3 +273,27 @@ func update_hand_layout() -> void:
 		tween.tween_property(card, "position", Vector2(target_x, target_y), animation_speed)
 		tween.tween_property(card, "rotation_degrees", target_rotation, animation_speed)
 		tween.tween_property(card, "scale", target_scale, animation_speed)
+	get_parent().updateCardCounts()
+
+#Adds a card to the draw pile. For prepare boba
+func addCard(car:Card):
+	get_parent().addCard(car)
+
+func addCardToHand(car:Card):
+	add_child(car)
+	car.position = Vector2(400, 200)
+	hand.append(car)
+	update_hand_layout()
+
+#only works with delecting a drink spot lol.
+func deselect():
+	print(selectedRow)
+	print(selected_drink_index)
+	if selectedRow != -1 and selected_drink_index != -1 and selectedRow < avaliable_spots.size() and selected_drink_index < avaliable_spots[selectedRow].size() and avaliable_spots[selectedRow][selected_drink_index] != null:
+		avaliable_spots[selectedRow][selected_drink_index].set_selected(false, playerId)
+
+func get_active_spot():
+	if selectedRow >= 0 and selectedRow < avaliable_spots.size():
+		if selected_drink_index >= 0 and selected_drink_index < avaliable_spots[selectedRow].size():
+			return avaliable_spots[selectedRow][selected_drink_index]
+	return null
