@@ -10,3 +10,4 @@ cardName = "Overtime"
 description = "Extend the time by 5"
 limitedUses = true
 maxUses = 1
+spawnItem = false

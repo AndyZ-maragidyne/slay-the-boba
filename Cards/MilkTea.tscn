@@ -7,14 +7,13 @@
 script = ExtResource("2_fcqxg")
 itemName = "Milk Tea"
 category = 1
-pointValue = 2
+pointValue = 5
 coinValue = 3
 liquidType = 1
 color = Color(0.8137349, 0.5102475, 0.37563685, 1)
 metadata/_custom_type_script = "uid://cenmim38sb5m2"
 
 [node name="Node2D" unique_id=1288389349 instance=ExtResource("1_8llan")]
-cost = 1
 cardName = "Fresh Milk Tea"
 limitedUses = true
 maxUses = 1

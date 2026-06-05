@@ -4,4 +4,5 @@
 [ext_resource type="PackedScene" uid="uid://ddjdb5r7cwixq" path="res://Cards/InstantTapioca.tscn" id="2_8ycy6"]
 
 [node name="ShopItem" unique_id=2110888813 instance=ExtResource("1_5asvx")]
+cost = 5
 Item = ExtResource("2_8ycy6")

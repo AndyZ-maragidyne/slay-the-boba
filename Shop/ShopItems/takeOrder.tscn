@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://depm0rx3yqjpa"]
+
+[ext_resource type="PackedScene" uid="uid://c8s8m3fa1eepc" path="res://Shop/ShopItems/shop_item.tscn" id="1_ea6gp"]
+[ext_resource type="PackedScene" uid="uid://bcw58khgniebe" path="res://Cards/TakeOrder.tscn" id="2_nk2v7"]
+
+[node name="ShopItem" unique_id=2110888813 instance=ExtResource("1_ea6gp")]
+cost = 10
+Item = ExtResource("2_nk2v7")

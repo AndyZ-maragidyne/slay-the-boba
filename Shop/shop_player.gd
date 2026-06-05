@@ -12,16 +12,27 @@ var endTurn = false
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Select_R_%s" % playerId) or \
-	   event.is_action_pressed("Select_L_%s" % playerId) or \
-	   event.is_action_pressed("Left_%s" % playerId) or \
-	   event.is_action_pressed("Right_%s" % playerId) or \
-	   event.is_action_pressed("Up_%s" % playerId) or \
-	   event.is_action_pressed("Down_%s" % playerId):
+	if event.is_action_pressed("Select_R_%s" % playerId) and event.device == deviceId:
+		if !readyUp:
+			get_parent().get_parent().getInput(event, playerId)
+	elif event.is_action_pressed("Select_L_%s" % playerId) and event.device == deviceId:
+		if !readyUp:
+			get_parent().get_parent().getInput(event, playerId)
+	elif event.is_action_pressed("Left_%s" % playerId) and event.device == deviceId:
+		if !readyUp:
+			get_parent().get_parent().getInput(event, playerId)
+	elif event.is_action_pressed("Right_%s" % playerId) and event.device == deviceId:
+		if !readyUp:
+			get_parent().get_parent().getInput(event, playerId)
+	elif event.is_action_pressed("Up_%s" % playerId) and event.device == deviceId:
+		if !readyUp:
+			get_parent().get_parent().getInput(event, playerId)
+	elif event.is_action_pressed("Down_%s" % playerId) and event.device == deviceId:
 		if !readyUp:
 			get_parent().get_parent().getInput(event, playerId)
 	elif event.is_action_pressed("A_%s" % playerId) and event.device == deviceId:
 		var item = get_parent().get_parent().getItemData(playerId)
+		print(item)
 		if item.card and item.cost <= coins:
 			var product = item.Item.instantiate()
 			globals.getDeck(playerId).append(product)
@@ -39,7 +50,7 @@ func _input(event: InputEvent) -> void:
 		
 
 func setCoins(value:int):
-	coins = value
+	coins += value
 	$Coins.text = "$" + str(coins)
 
 func displayDeck():
@@ -52,3 +63,6 @@ func displayDeck():
 	
 func unDisplayDeck():
 	$FullDeck.visible = false
+
+func convertToData():
+	return PlayerData.new(3, coins)

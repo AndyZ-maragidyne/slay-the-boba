@@ -16,4 +16,6 @@ metadata/_custom_type_script = "uid://cenmim38sb5m2"
 [node name="Node2D" unique_id=1288389349 instance=ExtResource("1_ifuoy")]
 cost = 1
 cardName = "Tea"
+limitedUses = true
+maxUses = 1
 itemData = SubResource("Resource_yah8q")

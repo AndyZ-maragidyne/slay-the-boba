@@ -10,3 +10,4 @@ cardName = "Extra Shift"
 description = "Extend the time by 2"
 limitedUses = true
 maxUses = 1
+spawnItem = false

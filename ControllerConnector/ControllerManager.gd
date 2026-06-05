@@ -54,7 +54,7 @@ func displayPlayers():
 func startGame():
 	globals.joinedPlayers = playerOrder
 	initializeDecks()
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://shop.tscn")
 
 func initializeDecks():
 	var smallCup = preload("res://Cards/SmallCup.tscn")
@@ -63,8 +63,47 @@ func initializeDecks():
 	var takeOrder = preload("res://Cards/TakeOrder.tscn")
 	var milkyTea = preload("res://Cards/MilkyTea.tscn")
 	var instantBoba = preload("res://Cards/InstantTapioca.tscn")
+	
+	var q1 = preload("res://Cards/Milk.tscn")
+	var q2 = preload("res://Cards/Water.tscn")
+	var q3 = preload("res://Cards/Tea.tscn")
+	var q4 = preload("res://Cards/RefineCrystals.tscn")
+	var q5 = preload("res://Cards/Extra Shift.tscn")
+	var q6 = preload("res://Cards/Overtime.tscn")
+	var q7 = preload("res://Cards/EnergyDrink.tscn")
+	var q8 = preload("res://Cards/Clean.tscn")
+	var q9 = preload("res://Cards/EatIngredients.tscn")
+	var q10 = preload("res://Cards/TakeOrder.tscn")
+	
 	var index = 0
 	for p in globals.joinedPlayers:
+		#var newCard = q1.instantiate()
+		#globals.playerDecks[index].append(newCard)
+		#newCard = q2.instantiate()
+		#globals.playerDecks[index].append(newCard)
+		#newCard = q3.instantiate()
+		#globals.playerDecks[index].append(newCard)
+		#newCard = q4.instantiate()
+		#globals.playerDecks[index].append(newCard)
+		#newCard = q5.instantiate()
+		#globals.playerDecks[index].append(newCard)
+		#newCard = q6.instantiate()
+		#globals.playerDecks[index].append(newCard)
+		#newCard = q7.instantiate()
+		#globals.playerDecks[index].append(newCard)
+		#newCard = q8.instantiate()
+		#globals.playerDecks[index].append(newCard)
+		#newCard = q9.instantiate()
+		#globals.playerDecks[index].append(newCard)
+		#newCard = q10.instantiate()
+		#globals.playerDecks[index].append(newCard)
+		#newCard = mediumCup.instantiate()
+		#globals.playerDecks[index].append(newCard)
+		#newCard = mediumCup.instantiate()
+		#globals.playerDecks[index].append(newCard)
+		#newCard = mediumCup.instantiate()
+		#globals.playerDecks[index].append(newCard)
+		
 		var newCard = smallCup.instantiate()
 		globals.playerDecks[index].append(newCard)
 		newCard = smallCup.instantiate()

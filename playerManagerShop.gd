@@ -89,4 +89,7 @@ func checkReadyUp():
 			break
 	if nextTurn:
 		print("GOING NEXT")
+		for p in allPlayers:
+			globals.playerData[p.playerId] = p.convertToData()
+		get_tree().change_scene_to_file("res://main.tscn")
 		#Function that stores the player's coins or something

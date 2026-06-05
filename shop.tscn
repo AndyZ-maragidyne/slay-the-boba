@@ -4,7 +4,23 @@
 [ext_resource type="PackedScene" uid="uid://cbkgy8vatrsup" path="res://store_shelf.tscn" id="2_e7rdd"]
 [ext_resource type="Texture2D" uid="uid://blqgwt20a004b" path="res://Untitled_-_May_19_2026_18.15.00asd.png" id="2_k3iel"]
 [ext_resource type="PackedScene" uid="uid://vbmtijwgma3y" path="res://Shop/ShopPlayer.tscn" id="4_6lah5"]
+[ext_resource type="PackedScene" uid="uid://bvylkr5mgkrmq" path="res://Shop/ShopItems/instantTapioca.tscn" id="4_gmb2m"]
+[ext_resource type="PackedScene" uid="uid://dou57bx5quky0" path="res://Shop/ShopItems/milkyTea.tscn" id="5_il0eq"]
+[ext_resource type="PackedScene" uid="uid://dsnpxxs2pkid0" path="res://Shop/ShopItems/water.tscn" id="6_acxsc"]
 [ext_resource type="Script" uid="uid://cg46e30ak6tpa" path="res://playerManagerShop.gd" id="7_8kdgp"]
+[ext_resource type="PackedScene" uid="uid://dlkf31gg3v3mb" path="res://Shop/ShopItems/milk.tscn" id="7_k3iel"]
+[ext_resource type="PackedScene" uid="uid://bqypiu1di11iy" path="res://Shop/ShopItems/tea.tscn" id="8_2807j"]
+[ext_resource type="PackedScene" uid="uid://2yl2qjyy6qs7" path="res://Shop/ShopItems/refineCrystals.tscn" id="9_u7exk"]
+[ext_resource type="PackedScene" uid="uid://d4etrghofgs1h" path="res://Shop/ShopItems/smallCup.tscn" id="10_db3q1"]
+[ext_resource type="PackedScene" uid="uid://do6acf2or02w" path="res://Shop/ShopItems/mediumCup.tscn" id="11_8f8xc"]
+[ext_resource type="PackedScene" uid="uid://b08ppjegqdojl" path="res://Shop/ShopItems/largeCup.tscn" id="12_g4q3a"]
+[ext_resource type="PackedScene" uid="uid://dis53gucnncw5" path="res://Shop/ShopItems/prepareBoba.tscn" id="13_acxsc"]
+[ext_resource type="PackedScene" uid="uid://2ur0ibdiogvt" path="res://Shop/ShopItems/extraShift.tscn" id="13_bv3hj"]
+[ext_resource type="PackedScene" uid="uid://b3abvhe7krk22" path="res://Shop/ShopItems/overtime.tscn" id="14_lccd8"]
+[ext_resource type="PackedScene" uid="uid://boc2g13b4nyup" path="res://Shop/ShopItems/energyDrink.tscn" id="15_ckaty"]
+[ext_resource type="PackedScene" uid="uid://bfnqlyro7jhsn" path="res://Shop/ShopItems/clean.tscn" id="16_ugyvi"]
+[ext_resource type="PackedScene" uid="uid://dtw3lflc721q1" path="res://Shop/ShopItems/eatIngredients.tscn" id="17_kdli5"]
+[ext_resource type="PackedScene" uid="uid://depm0rx3yqjpa" path="res://Shop/ShopItems/takeOrder.tscn" id="18_ebk4j"]
 
 [node name="Shop" type="Node2D" unique_id=1168581076]
 script = ExtResource("1_viryw")
@@ -22,43 +38,48 @@ theme_override_font_sizes/font_size = 62
 text = "Buy some cards"
 
 [node name="StoreShelf" parent="." unique_id=2143976579 instance=ExtResource("2_e7rdd")]
-visible = false
-position = Vector2(1403, 200)
-itemPool = Array[Node2D]([null])
+position = Vector2(1440, 200)
+itemPool = Array[PackedScene]([ExtResource("4_gmb2m"), ExtResource("5_il0eq"), ExtResource("6_acxsc"), ExtResource("7_k3iel"), ExtResource("8_2807j")])
 
 [node name="StoreShelf2" parent="." unique_id=1804876247 instance=ExtResource("2_e7rdd")]
 visible = false
-position = Vector2(1440, 420)
+position = Vector2(1440, 444)
+itemPool = Array[PackedScene]([ExtResource("9_u7exk"), ExtResource("10_db3q1"), ExtResource("11_8f8xc"), ExtResource("12_g4q3a"), ExtResource("13_acxsc")])
 
 [node name="StoreShelf3" parent="." unique_id=211701911 instance=ExtResource("2_e7rdd")]
 visible = false
-position = Vector2(1440, 635)
+position = Vector2(1440, 677)
+itemPool = Array[PackedScene]([ExtResource("13_bv3hj"), ExtResource("14_lccd8"), ExtResource("15_ckaty")])
 
 [node name="StoreShelf4" parent="." unique_id=908958416 instance=ExtResource("2_e7rdd")]
 visible = false
-position = Vector2(1440, 854)
+position = Vector2(1440, 924)
+itemPool = Array[PackedScene]([ExtResource("16_ugyvi"), ExtResource("17_kdli5"), ExtResource("18_ebk4j")])
 
 [node name="lock2" type="Label" parent="." unique_id=1670350497]
+visible = false
 offset_left = 1233.0
-offset_top = 368.0
+offset_top = 397.0
 offset_right = 1654.0
-offset_bottom = 509.0
+offset_bottom = 538.0
 theme_override_font_sizes/font_size = 60
 text = "Survive Day 2"
 
 [node name="lock3" type="Label" parent="." unique_id=1733863336]
+visible = false
 offset_left = 1233.0
-offset_top = 587.0
+offset_top = 621.0
 offset_right = 1654.0
-offset_bottom = 728.0
+offset_bottom = 762.0
 theme_override_font_sizes/font_size = 60
 text = "Survive Day 3"
 
 [node name="lock4" type="Label" parent="." unique_id=1457555322]
+visible = false
 offset_left = 1233.0
-offset_top = 800.0
+offset_top = 889.0
 offset_right = 1654.0
-offset_bottom = 941.0
+offset_bottom = 1030.0
 theme_override_font_sizes/font_size = 60
 text = "Survive Day 4"
 

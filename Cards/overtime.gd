@@ -1,4 +1,4 @@
 extends Card
 
 func onAbility():
-	get_parent().get_parent().get_parent().extendTime(5)
+	get_parent().get_parent().get_parent().get_parent().extendTime(5)

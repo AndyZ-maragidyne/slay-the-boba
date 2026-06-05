@@ -9,11 +9,28 @@ var turnsSinceFirst = 0
 var orderAutoSending = false
 
 func _ready():
-	$Progress.setProgress(repGoal)
-	$Progress.updateProgress(rep)
-	$Score.text = "Goal: " + str(repGoal)
+	setup()
+	#$Progress.setProgress(repGoal)
+	#$Progress.updateProgress(rep)
+	#repGoal = globals.getGoal()
+	#$Score.text = "Goal: " + str(repGoal)
+	#timeLeft = globals.getTimeLeft()
+	#$TimeLeft.text = "Time Left: " + str(timeLeft)
 	pass
 
+func setup():
+	var numPlayers = $Players.activePlayers.size()
+	print(numPlayers)
+	repGoal = globals.getGoal() * numPlayers
+	print(repGoal)
+	$Progress.setProgress(repGoal)
+	$Progress.updateProgress(rep)
+	
+	$Score.text = "Goal: " + str(repGoal)
+	timeLeft = globals.getTimeLeft()
+	$TimeLeft.text = "Time Left: " + str(timeLeft)
+	startTurn()
+	
 func startTurn():
 	#get all the players make them all draw cards
 	var allPlayers = $Players.get_children()
@@ -33,11 +50,12 @@ func startTurn():
 		p.get_node("Hand").draw_card()
 		p.updateCardCounts()
 		p.resetEnergy()
-		if firstTurn:
-			var cardScene = preload("res://Cards/TakeOrderStartingHand.tscn")
-			var card = cardScene.instantiate()
-			p.get_node("Hand").addCardToHand(card)
-			firstTurn = false
+	if firstTurn:
+		var random_player = allPlayers.pick_random()
+		var cardScene = preload("res://Cards/TakeOrderStartingHand.tscn")
+		var card = cardScene.instantiate()
+		random_player.get_node("Hand").addCardToHand(card)
+		firstTurn = false
 	$Players.setPlayerPositions()
 
 func checkEndTurn():
@@ -55,7 +73,7 @@ func endTurn():
 		$Drinks.sendOrder()
 	timeLeft -= 1
 	turnsSinceFirst += 1
-	if turnsSinceFirst >= 3:
+	if turnsSinceFirst >= 2:
 		modifyOrderAutoSending(true)
 	if timeLeft == 0:
 		endDay()
@@ -64,12 +82,17 @@ func endTurn():
 		startTurn()
 
 func endDay():
+	for d in $Drinks.drinkSpots:
+		await get_tree().create_timer(0.6).timeout
+		$Drinks.sendOrder()
+	await get_tree().create_timer(0.6).timeout
+	var coinsSplit = coins / $Players.activePlayers.size()
 	if rep >= repGoal:
 		var allPlayers = $Players.get_children()
 		for p in allPlayers:
-			p.coins += coins
+			p.coins += coinsSplit
 			globals.playerData[p.playerId] = p.convertToData()
-		globals.totalCoins += coins
+		globals.totalCoins += coinsSplit
 		globals.level += 1
 		get_tree().change_scene_to_file("res://shop.tscn")
 	else:
@@ -79,6 +102,7 @@ func endDay():
 
 func extendTime(time:int):
 	timeLeft += time
+	$TimeLeft.text = "Time Left: " + str(timeLeft)
 
 func modifyRep(value:int):
 	rep += value

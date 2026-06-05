@@ -14,7 +14,6 @@ func _ready() -> void:
 		index += 1
 	
 	setPlayerPositions()
-	get_parent().startTurn()
 
 #func _on_joy_connection_changed(device_id: int, connected:bool) -> void:
 	#if connected:

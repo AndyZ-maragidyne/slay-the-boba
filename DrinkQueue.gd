@@ -71,6 +71,5 @@ func sendOrder():
 		drinkScore = -10
 	get_parent().modifyRep(drinkScore)
 	get_parent().modifyCoins(coinScore)
-	get_parent().get_node("Score").text = "Rep: " + str(get_parent().rep)
 
 	update_drink_layout()
