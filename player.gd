@@ -16,6 +16,14 @@ var discard: Array[Node2D] = []
 var mixingSelectedIndex = -1
 var mixingSpots = null
 func _ready() -> void:
+	if playerId == 0:
+		$Icon1.visible = true
+	elif playerId == 1:
+		$Icon2.visible = true
+	elif playerId == 2:
+		$Icon3.visible = true
+	elif playerId == 3:
+		$Icon4.visible = true
 	pass
 	
 	

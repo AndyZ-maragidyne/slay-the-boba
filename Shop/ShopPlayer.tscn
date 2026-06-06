@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://vbmtijwgma3y"]
 
 [ext_resource type="Script" uid="uid://c4r4jrgxfvxw5" path="res://Shop/shop_player.gd" id="1_gaf6i"]
-[ext_resource type="Texture2D" uid="uid://dn0guvyqrdwf8" path="res://icon.svg" id="1_i0v16"]
+[ext_resource type="Texture2D" uid="uid://be4xhwilepjqs" path="res://picutres/red boba.png" id="2_ye1m7"]
+[ext_resource type="Texture2D" uid="uid://c6otvt8s0duik" path="res://picutres/blue boba.png" id="3_n867g"]
 [ext_resource type="Texture2D" uid="uid://c4v2s1tyi2oc2" path="res://greencheckmark-spraypng.png" id="3_wb4uq"]
+[ext_resource type="Texture2D" uid="uid://b783pks7cfb2k" path="res://picutres/yellow boba.png" id="4_5xh56"]
+[ext_resource type="Texture2D" uid="uid://ckpl4hg3prtni" path="res://picutres/green boba.png" id="5_okhdx"]
 
 [node name="ShopPlayer" type="Node2D" unique_id=1799641383]
 script = ExtResource("1_gaf6i")
@@ -17,9 +20,29 @@ text = "$999"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=287475743]
-position = Vector2(0, 213)
-texture = ExtResource("1_i0v16")
+[node name="Icon1" type="Sprite2D" parent="." unique_id=1131013162]
+visible = false
+position = Vector2(-3.4337692, 182.04306)
+scale = Vector2(0.3787252, 0.3787252)
+texture = ExtResource("2_ye1m7")
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=1174332356]
+visible = false
+position = Vector2(-3.4337692, 181.04306)
+scale = Vector2(0.3787252, 0.3787252)
+texture = ExtResource("3_n867g")
+
+[node name="Icon3" type="Sprite2D" parent="." unique_id=1095462429]
+visible = false
+position = Vector2(-3.4337692, 181.04306)
+scale = Vector2(0.3787252, 0.3787252)
+texture = ExtResource("4_5xh56")
+
+[node name="Icon4" type="Sprite2D" parent="." unique_id=1198142199]
+visible = false
+position = Vector2(-3.4337692, 181.04306)
+scale = Vector2(0.3787252, 0.3787252)
+texture = ExtResource("5_okhdx")
 
 [node name="FullDeck" type="RichTextLabel" parent="." unique_id=1916135384]
 offset_left = -227.0

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://rcsrdxt0fjtd"]
 
 [ext_resource type="Script" uid="uid://tohbvg4igs20" path="res://shop.gd" id="1_viryw"]
+[ext_resource type="Texture2D" uid="uid://dtysaqcoq8xvb" path="res://picutres/shopbackground.png" id="2_acxsc"]
 [ext_resource type="PackedScene" uid="uid://cbkgy8vatrsup" path="res://store_shelf.tscn" id="2_e7rdd"]
-[ext_resource type="Texture2D" uid="uid://blqgwt20a004b" path="res://Untitled_-_May_19_2026_18.15.00asd.png" id="2_k3iel"]
 [ext_resource type="PackedScene" uid="uid://vbmtijwgma3y" path="res://Shop/ShopPlayer.tscn" id="4_6lah5"]
 [ext_resource type="PackedScene" uid="uid://bvylkr5mgkrmq" path="res://Shop/ShopItems/instantTapioca.tscn" id="4_gmb2m"]
 [ext_resource type="PackedScene" uid="uid://dou57bx5quky0" path="res://Shop/ShopItems/milkyTea.tscn" id="5_il0eq"]
@@ -21,14 +21,17 @@
 [ext_resource type="PackedScene" uid="uid://bfnqlyro7jhsn" path="res://Shop/ShopItems/clean.tscn" id="16_ugyvi"]
 [ext_resource type="PackedScene" uid="uid://dtw3lflc721q1" path="res://Shop/ShopItems/eatIngredients.tscn" id="17_kdli5"]
 [ext_resource type="PackedScene" uid="uid://depm0rx3yqjpa" path="res://Shop/ShopItems/takeOrder.tscn" id="18_ebk4j"]
+[ext_resource type="Texture2D" uid="uid://bb3w3pstvrjlx" path="res://picutres/boba keychain.png" id="22_u7exk"]
+[ext_resource type="Texture2D" uid="uid://cpkgvjhakdjfs" path="res://picutres/boba reward.png" id="23_db3q1"]
+[ext_resource type="Texture2D" uid="uid://baol7ssrixmbj" path="res://picutres/d7ffe0cfb53b47edf78fd096ec33050c.jpg" id="24_8f8xc"]
 
 [node name="Shop" type="Node2D" unique_id=1168581076]
 script = ExtResource("1_viryw")
 
-[node name="UntitledMay19202618_15_00Asd" type="Sprite2D" parent="." unique_id=1522895285]
-position = Vector2(469, -396)
-scale = Vector2(1.765, 1.765)
-texture = ExtResource("2_k3iel")
+[node name="Shopbackground" type="Sprite2D" parent="." unique_id=373897826]
+position = Vector2(961.3354, 540.25)
+scale = Vector2(0.6483813, 0.6483813)
+texture = ExtResource("2_acxsc")
 
 [node name="cards" type="Label" parent="." unique_id=1602458789]
 offset_left = 1200.0
@@ -38,6 +41,7 @@ theme_override_font_sizes/font_size = 62
 text = "Buy some cards"
 
 [node name="StoreShelf" parent="." unique_id=2143976579 instance=ExtResource("2_e7rdd")]
+visible = false
 position = Vector2(1440, 200)
 itemPool = Array[PackedScene]([ExtResource("4_gmb2m"), ExtResource("5_il0eq"), ExtResource("6_acxsc"), ExtResource("7_k3iel"), ExtResource("8_2807j")])
 
@@ -57,7 +61,6 @@ position = Vector2(1440, 924)
 itemPool = Array[PackedScene]([ExtResource("16_ugyvi"), ExtResource("17_kdli5"), ExtResource("18_ebk4j")])
 
 [node name="lock2" type="Label" parent="." unique_id=1670350497]
-visible = false
 offset_left = 1233.0
 offset_top = 397.0
 offset_right = 1654.0
@@ -66,7 +69,6 @@ theme_override_font_sizes/font_size = 60
 text = "Survive Day 2"
 
 [node name="lock3" type="Label" parent="." unique_id=1733863336]
-visible = false
 offset_left = 1233.0
 offset_top = 621.0
 offset_right = 1654.0
@@ -75,7 +77,6 @@ theme_override_font_sizes/font_size = 60
 text = "Survive Day 3"
 
 [node name="lock4" type="Label" parent="." unique_id=1457555322]
-visible = false
 offset_left = 1233.0
 offset_top = 889.0
 offset_right = 1654.0
@@ -97,10 +98,40 @@ playerScene = ExtResource("4_6lah5")
 [node name="Upgrades" type="Node2D" parent="." unique_id=245110207]
 
 [node name="lock3" type="Label" parent="Upgrades" unique_id=788822459]
-offset_left = 19.0
-offset_top = 200.0
-offset_right = 794.0
-offset_bottom = 621.0
-theme_override_font_sizes/font_size = 60
+offset_left = 24.0
+offset_top = 140.0
+offset_right = 485.0
+offset_bottom = 441.0
+theme_override_font_sizes/font_size = 53
 text = "Coming soon. Ngl this code is so bad im not making this rn"
 autowrap_mode = 3
+
+[node name="upgrades(store)2" type="Label" parent="." unique_id=282998294]
+offset_left = 604.0
+offset_right = 928.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 62
+text = "Rewards"
+
+[node name="BobaKeychain" type="Sprite2D" parent="." unique_id=1881715878]
+position = Vector2(806, 337.00003)
+scale = Vector2(0.31790122, 0.31790122)
+texture = ExtResource("22_u7exk")
+
+[node name="BobaReward" type="Sprite2D" parent="." unique_id=276022490]
+position = Vector2(649, 330.00003)
+scale = Vector2(0.44435742, 0.44435745)
+texture = ExtResource("23_db3q1")
+
+[node name="Label" type="Label" parent="." unique_id=157448770]
+offset_left = 578.0
+offset_top = 460.0
+offset_right = 796.0
+offset_bottom = 527.0
+theme_override_font_sizes/font_size = 48
+text = "1,000,000"
+
+[node name="gemz" type="Sprite2D" parent="." unique_id=1072864743]
+position = Vector2(827.01105, 497.00003)
+scale = Vector2(0.06906081, 0.0690608)
+texture = ExtResource("24_8f8xc")

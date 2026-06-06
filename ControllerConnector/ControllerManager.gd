@@ -54,7 +54,7 @@ func displayPlayers():
 func startGame():
 	globals.joinedPlayers = playerOrder
 	initializeDecks()
-	get_tree().change_scene_to_file("res://shop.tscn")
+	get_tree().change_scene_to_file("res://main.tscn")
 
 func initializeDecks():
 	var smallCup = preload("res://Cards/SmallCup.tscn")

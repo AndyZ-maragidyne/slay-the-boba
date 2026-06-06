@@ -9,7 +9,15 @@ var deck = []
 var readyUp = false
 var endTurn = false
 
-
+func _ready() -> void:
+	if playerId == 0:
+		$Icon1.visible = true
+	elif playerId == 1:
+		$Icon2.visible = true
+	elif playerId == 2:
+		$Icon3.visible = true
+	elif playerId == 3:
+		$Icon4.visible = true
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Select_R_%s" % playerId) and event.device == deviceId:
