@@ -12,7 +12,26 @@ func addOrder():
 	var drink = drinkScene.instantiate()
 	add_child(drink)
 	drinkSpots.append(drink)
-
+	
+	#Making the order:
+	#add some kind of weight for randomly generating any, a menu item, and a general drink(milk tea, fruit tea, slush)
+	var random = randi_range(1, 2)
+	if random == 1:
+		var isEmpty = true
+		var notEmpty = []
+		var index = 0
+		for i in globals.menu.slots:
+			if i.size() != 0:
+				isEmpty = false
+				notEmpty.append(index)
+			index += 1
+		if !isEmpty:
+			var chosen = notEmpty.pick_random()
+			for i in chosen:
+				drink.order.requirements.add(i)
+			
+		
+	
 func update_drink_layout():
 	var targetPositions = [
 		Vector2(1612, 378),

@@ -36,7 +36,9 @@ func apply_card(c: Card):
 func applyMix():
 	#if first thing is milk and second is tea OR vice versa, make a milk tea
 	if (storedCards.size() >= 2) and (storedCards[0].itemData.liquidType == ItemData.LiquidType.MILK and storedCards[1].itemData.liquidType == ItemData.LiquidType.TEA or storedCards[0].itemData.liquidType == ItemData.LiquidType.TEA and storedCards[1].itemData.liquidType == ItemData.LiquidType.MILK):
-		var outputScene = preload("res://Cards/MilkTea.tscn")
+		var outputData = preload("res://Cards/MilkTea.tres")
+		var outputScene = preload("res://Cards/Card.tscn")
+		outputScene.data = outputData
 		var output = outputScene.instantiate()
 		storedCards[0].queue_free()
 		storedCards[1].queue_free()

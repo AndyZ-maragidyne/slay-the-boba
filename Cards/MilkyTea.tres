@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bamcrov8ph0bn"]
+
+[ext_resource type="Resource" uid="uid://ckmefjcaf1dyt" path="res://Cards/ItemData/MilkyTea.tres" id="1_62tj1"]
+[ext_resource type="Script" uid="uid://b0aj8a2cxyl1f" path="res://Cards/Scripts/cardData.gd" id="1_u752c"]
+
+[resource]
+script = ExtResource("1_u752c")
+cost = 1
+cardName = "Milky Tea"
+limitedUses = true
+maxUses = 1
+itemData = ExtResource("1_62tj1")
+metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

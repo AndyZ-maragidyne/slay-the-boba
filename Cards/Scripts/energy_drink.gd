@@ -1,4 +1,5 @@
-extends Card
+extends CardData
+class_name CardEnergyDrink
 
-func onAbility():
-	get_parent().get_parent().maxEnergy += 1
+func onAbility(card, player):
+	player.maxEnergy += 1

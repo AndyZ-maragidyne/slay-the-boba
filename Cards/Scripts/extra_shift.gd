@@ -1,4 +1,5 @@
-extends Card
+extends CardData
+class_name CardExtraShift
 
-func onAbility():
-	get_parent().get_parent().get_parent().get_parent().extendTime(2)
+func onAbility(card, player):
+	globals.mainGame.extendTime(2)

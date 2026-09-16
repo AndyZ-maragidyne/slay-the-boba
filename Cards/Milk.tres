@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://b1o35sltj3jk6"]
+
+[ext_resource type="Script" uid="uid://b0aj8a2cxyl1f" path="res://Cards/Scripts/cardData.gd" id="1_787cl"]
+[ext_resource type="Resource" uid="uid://cj5g0xu1b24t7" path="res://Cards/ItemData/Milk.tres" id="1_eae33"]
+
+[resource]
+script = ExtResource("1_787cl")
+cost = 1
+cardName = "Milk"
+limitedUses = true
+maxUses = 1
+spawnItem = false
+itemData = ExtResource("1_eae33")
+metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

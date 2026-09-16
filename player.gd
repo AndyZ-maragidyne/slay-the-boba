@@ -24,6 +24,8 @@ func _ready() -> void:
 		$Icon3.visible = true
 	elif playerId == 3:
 		$Icon4.visible = true
+	for c in deck:
+		c.setPlayer(self)
 	pass
 	
 	
@@ -35,6 +37,8 @@ func shuffle():
 	deck.shuffle()
 	pass
 
+func getHand():
+	return $Hand
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("X_%s" % playerId) and event.device == deviceId:
 		#send order

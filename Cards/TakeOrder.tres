@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardTakeOrder" format=3 uid="uid://ceo1aoypby27p"]
+
+[ext_resource type="Script" uid="uid://byfv0eys4u2b7" path="res://Cards/Scripts/TakeOrder.gd" id="1_njrm4"]
+
+[resource]
+script = ExtResource("1_njrm4")
+cost = 1
+cardName = "Take Order"
+description = "Create a new order"
+spawnItem = false
+metadata/_custom_type_script = "uid://byfv0eys4u2b7"

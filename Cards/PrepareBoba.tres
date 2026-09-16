@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardPrepareBoba" format=3 uid="uid://dbi5edull1p3s"]
+
+[ext_resource type="Script" uid="uid://bhc81wxaow25n" path="res://Cards/Scripts/prepare_boba.gd" id="1_srys4"]
+
+[resource]
+script = ExtResource("1_srys4")
+cost = 1
+cardName = "Prepare Boba"
+description = "Shuffle 2 boba into your draw pile"
+spawnItem = false
+metadata/_custom_type_script = "uid://bhc81wxaow25n"

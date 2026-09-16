@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardEnergyDrink" format=3 uid="uid://b0u2bo0caxfs"]
+
+[ext_resource type="Script" uid="uid://0ar6dpmob5rr" path="res://Cards/Scripts/energy_drink.gd" id="1_r4yxe"]
+
+[resource]
+script = ExtResource("1_r4yxe")
+cost = 3
+cardName = "Energy Drink"
+description = "Raise Max Energy by 1"
+limitedUses = true
+maxUses = 1
+spawnItem = false
+metadata/_custom_type_script = "uid://0ar6dpmob5rr"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://rdpht8d5reva"]
+
+[ext_resource type="PackedScene" uid="uid://cr8v25y4p2h01" path="res://bobaItem.tscn" id="1_3yvl5"]
+[ext_resource type="Script" uid="uid://b0aj8a2cxyl1f" path="res://Cards/Scripts/cardData.gd" id="1_66kdu"]
+[ext_resource type="Resource" uid="uid://dnjkyq4uj4gb6" path="res://Cards/ItemData/InstantTapioca.tres" id="2_07nt1"]
+
+[resource]
+script = ExtResource("1_66kdu")
+cost = 1
+cardName = "Instant Tapioca"
+item = ExtResource("1_3yvl5")
+limitedUses = true
+maxUses = 1
+itemData = ExtResource("2_07nt1")
+metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

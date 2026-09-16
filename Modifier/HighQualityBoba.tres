@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ModHighQualityBoba" format=3 uid="uid://cpwaadhgyvu4w"]
+
+[ext_resource type="Script" uid="uid://dtw4j48p85pnp" path="res://Modifier/Scripts/HighQualityBoba.gd" id="1_fhq0s"]
+
+[resource]
+script = ExtResource("1_fhq0s")
+title = "High Quality Boba"
+description = "Earn no reputation for unfresh boba"
+metadata/_custom_type_script = "uid://dtw4j48p85pnp"

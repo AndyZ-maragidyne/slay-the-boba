@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bihv0etdwf4ac"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_6ldq1"]
+[ext_resource type="Resource" uid="uid://cx12djb2gqvhu" path="res://Cards/ItemData/water.tres" id="2_6ldq1"]
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_6ldq1")]
+cost = 1
+cardName = "Water"
+itemData = ExtResource("2_6ldq1")
+
+[node name="Name" parent="." index="1" unique_id=913472170]
+text = "Water"

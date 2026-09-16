@@ -7,8 +7,10 @@ var repGoal = 5
 var firstTurn = true
 var turnsSinceFirst = 0
 var orderAutoSending = false
+var activeModifiers = []
 
 func _ready():
+	globals.mainGame = self
 	setup()
 	#$Progress.setProgress(repGoal)
 	#$Progress.updateProgress(rep)
@@ -29,6 +31,10 @@ func setup():
 	$Score.text = "Goal: " + str(repGoal)
 	timeLeft = globals.getTimeLeft()
 	$TimeLeft.text = "Time Left: " + str(timeLeft)
+	
+	#setup the modifiers
+	for i in activeModifiers:
+		i.onStartDay()
 	startTurn()
 	
 func startTurn():
@@ -52,11 +58,14 @@ func startTurn():
 		p.resetEnergy()
 	if firstTurn:
 		var random_player = allPlayers.pick_random()
-		var cardScene = preload("res://Cards/TakeOrderStartingHand.tscn")
-		var card = cardScene.instantiate()
+		var takeOrderStartingHand = preload("res://Cards/TakeOrderStartingHand.tres")
+		var card = Card.create(takeOrderStartingHand)
 		random_player.get_node("Hand").addCardToHand(card)
 		firstTurn = false
 	$Players.setPlayerPositions()
+	
+	for i in activeModifiers:
+		i.onStartTurn()
 
 func checkEndTurn():
 	var allPlayers = $Players.get_children()

@@ -8,6 +8,8 @@ extends Node2D
 var itemDatas: Array[ItemData] = []
 var placedItems:Array = []
 
+@onready var order = $Order
+
 func _ready() -> void:
 	borderRed.visible = false
 	borderBlue.visible = false

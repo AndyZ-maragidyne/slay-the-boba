@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ddjdb5r7cwixq"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_3cdi1"]
+[ext_resource type="PackedScene" uid="uid://cr8v25y4p2h01" path="res://bobaItem.tscn" id="2_qq3kd"]
+[ext_resource type="Resource" uid="uid://dnjkyq4uj4gb6" path="res://Cards/ItemData/InstantTapioca.tres" id="3_a8l3b"]
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_3cdi1")]
+cost = 1
+cardName = "Instant Tapioca"
+item = ExtResource("2_qq3kd")
+limitedUses = true
+maxUses = 1
+itemData = ExtResource("3_a8l3b")

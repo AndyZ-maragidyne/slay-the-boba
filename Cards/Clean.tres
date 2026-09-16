@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CardClean" format=3 uid="uid://bjlaiw2e5hgwq"]
+
+[ext_resource type="Script" uid="uid://cs73wsd32a05a" path="res://Cards/Scripts/clean.gd" id="1_g3jm4"]
+
+[resource]
+script = ExtResource("1_g3jm4")
+description = "Increase Rep by 5
+Increase cost by 1"
+metadata/_custom_type_script = "uid://cs73wsd32a05a"

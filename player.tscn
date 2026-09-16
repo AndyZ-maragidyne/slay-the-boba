@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://buwtsrul4kp4u" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://be4xhwilepjqs" path="res://picutres/red boba.png" id="2_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://c6otvt8s0duik" path="res://picutres/blue boba.png" id="3_2hs0m"]
-[ext_resource type="PackedScene" uid="uid://d0a2wfx6husdo" path="res://Cards/Hand.tscn" id="3_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://d0a2wfx6husdo" path="res://Hand.tscn" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://b783pks7cfb2k" path="res://picutres/yellow boba.png" id="4_1jxqw"]
 [ext_resource type="Texture2D" uid="uid://ckpl4hg3prtni" path="res://picutres/green boba.png" id="5_dw050"]
 

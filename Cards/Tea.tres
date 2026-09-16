@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://w6jjisnihmcu"]
+
+[ext_resource type="Resource" uid="uid://drxoso4kcxpix" path="res://Cards/ItemData/tea.tres" id="1_g20vp"]
+[ext_resource type="Script" uid="uid://b0aj8a2cxyl1f" path="res://Cards/Scripts/cardData.gd" id="1_ik841"]
+
+[resource]
+script = ExtResource("1_ik841")
+cost = 1
+cardName = "Tea"
+limitedUses = true
+maxUses = 1
+itemData = ExtResource("1_g20vp")
+metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

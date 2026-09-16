@@ -1,5 +1,6 @@
-extends Card
+extends CardData
+class_name CardEatIngredients
 
-func onAbility():
-	get_parent().get_parent().energy += 1
-	get_parent().get_parent().get_parent().get_parent().modifyRep(-5)
+func onAbility(card, player):
+	player.energy += 1
+	globals.mainGame.modifyRep(-5)

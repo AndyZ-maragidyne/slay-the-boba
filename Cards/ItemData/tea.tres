@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://drxoso4kcxpix"]
+
+[ext_resource type="Script" uid="uid://cenmim38sb5m2" path="res://items/itemData.gd" id="1_nhg6q"]
+
+[resource]
+script = ExtResource("1_nhg6q")
+itemName = "Tea"
+category = 1
+pointValue = 1
+coinValue = 1
+liquidType = 2
+color = Color(0.55035216, 0.49545747, 0.3142302, 1)
+metadata/_custom_type_script = "uid://cenmim38sb5m2"

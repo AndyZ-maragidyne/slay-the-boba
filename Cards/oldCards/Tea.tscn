@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dw0rm2tcik6dc"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_ifuoy"]
+[ext_resource type="Resource" uid="uid://drxoso4kcxpix" path="res://Cards/ItemData/tea.tres" id="2_ifuoy"]
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_ifuoy")]
+cost = 1
+cardName = "Tea"
+limitedUses = true
+maxUses = 1
+itemData = ExtResource("2_ifuoy")

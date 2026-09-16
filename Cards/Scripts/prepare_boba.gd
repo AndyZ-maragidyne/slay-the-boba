@@ -1,10 +1,12 @@
-extends Card
+extends CardData
+class_name CardPrepareBoba
 
-var BobaScene = preload("res://Cards/boba.tscn")
+var BobaScene = preload("res://Cards/boba.tres")
+#TODO FIX if it still dosent work. this dosent exist anymore
 
-func onAbility():
-	var boba = BobaScene.instantiate()
-	get_parent().addCard(boba)
-	var boba2 = BobaScene.instantiate()
-	get_parent().addCard(boba2)
-	get_parent().deck.shuffle()
+func onAbility(card, player):
+	var boba = Card.create(BobaScene)
+	player.getHand().addCard(boba)
+	var boba2 = Card.create(BobaScene)
+	player.getHand().addCard(boba2)
+	player.getHand().deck.shuffle()

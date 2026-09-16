@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://b2o53n4l7x2dk"]
+
+[ext_resource type="PackedScene" uid="uid://d0otaoiqfglfw" path="res://crystal_boba.tscn" id="1_h2eja"]
+[ext_resource type="Script" uid="uid://b0aj8a2cxyl1f" path="res://Cards/Scripts/cardData.gd" id="1_y2nnr"]
+[ext_resource type="Resource" uid="uid://bmhq7nimppnwu" path="res://Cards/ItemData/crystalBoba.tres" id="2_x2fou"]
+
+[resource]
+script = ExtResource("1_y2nnr")
+cost = 1
+cardName = "Crystal Boba"
+item = ExtResource("1_h2eja")
+limitedUses = true
+maxUses = 1
+itemData = ExtResource("2_x2fou")
+metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

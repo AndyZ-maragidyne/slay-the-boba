@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://0ij1ft8q6mll"]
+
+[ext_resource type="Resource" uid="uid://cx12djb2gqvhu" path="res://Cards/ItemData/water.tres" id="1_4p384"]
+[ext_resource type="Script" uid="uid://b0aj8a2cxyl1f" path="res://Cards/Scripts/cardData.gd" id="1_j4c22"]
+
+[resource]
+script = ExtResource("1_j4c22")
+cost = 1
+cardName = "Water"
+itemData = ExtResource("1_4p384")
+metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

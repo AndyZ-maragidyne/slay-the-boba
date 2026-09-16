@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://jakrtoq36oep"]
+
+[ext_resource type="PackedScene" uid="uid://dmpsgx3as1ru6" path="res://items/large cup.tscn" id="1_rkn66"]
+[ext_resource type="Script" uid="uid://b0aj8a2cxyl1f" path="res://Cards/Scripts/cardData.gd" id="1_x4thd"]
+[ext_resource type="Resource" uid="uid://qsp07cpmk11r" path="res://Cards/ItemData/LargeCup.tres" id="2_rkn66"]
+
+[resource]
+script = ExtResource("1_x4thd")
+cost = 2
+cardName = "Large Cup"
+description = "-2 rep for each unfilled section"
+item = ExtResource("1_rkn66")
+itemData = ExtResource("2_rkn66")
+metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

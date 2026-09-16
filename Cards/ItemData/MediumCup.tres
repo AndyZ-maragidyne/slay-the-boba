@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cbih7lbeoh8ty"]
+
+[ext_resource type="Script" uid="uid://cenmim38sb5m2" path="res://items/itemData.gd" id="1_kfpbn"]
+
+[resource]
+script = ExtResource("1_kfpbn")
+itemName = "Medium Cup"
+pointValue = 3
+coinValue = 3
+size = 2
+metadata/_custom_type_script = "uid://cenmim38sb5m2"

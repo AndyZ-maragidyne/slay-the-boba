@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b6ifrf75ylpfh"]
+
+[ext_resource type="Script" uid="uid://cenmim38sb5m2" path="res://items/itemData.gd" id="1_ih3it"]
+
+[resource]
+script = ExtResource("1_ih3it")
+itemName = "Boba"
+category = 2
+pointValue = 4
+coinValue = 8
+metadata/_custom_type_script = "uid://cenmim38sb5m2"

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://58dmhl6wr51f"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_ufym5"]
+[ext_resource type="Resource" uid="uid://cj5g0xu1b24t7" path="res://Cards/ItemData/Milk.tres" id="2_whiyc"]
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_ufym5")]
+cost = 1
+cardName = "Milk"
+limitedUses = true
+maxUses = 1
+itemData = ExtResource("2_whiyc")

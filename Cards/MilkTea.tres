@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bp4thl2pup4v3"]
+
+[ext_resource type="Resource" uid="uid://babokdovvrk67" path="res://Cards/ItemData/MilkTea.tres" id="1_4eq5l"]
+[ext_resource type="Script" uid="uid://b0aj8a2cxyl1f" path="res://Cards/Scripts/cardData.gd" id="1_y86rj"]
+
+[resource]
+script = ExtResource("1_y86rj")
+cardName = "Fresh Milk Tea"
+limitedUses = true
+maxUses = 1
+itemData = ExtResource("1_4eq5l")
+metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

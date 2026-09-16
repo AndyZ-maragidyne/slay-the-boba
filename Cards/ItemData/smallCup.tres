@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ca3bus6tq4ba5"]
+
+[ext_resource type="Script" uid="uid://cenmim38sb5m2" path="res://items/itemData.gd" id="1_rrvq7"]
+
+[resource]
+resource_name = "CardItemData"
+script = ExtResource("1_rrvq7")
+itemName = "Small Cup"
+pointValue = 1
+coinValue = 1
+size = 1
+metadata/_custom_type_script = "uid://cenmim38sb5m2"

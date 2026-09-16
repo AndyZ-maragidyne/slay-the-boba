@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b5eyrj7u5j1a6"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_uquqk"]
+[ext_resource type="Script" uid="uid://b3rvn3pjpn84w" path="res://Cards/small_cup.gd" id="2_qoerj"]
+[ext_resource type="PackedScene" uid="uid://sut132ecpcrm" path="res://items/small cup.tscn" id="3_8r5tn"]
+[ext_resource type="Resource" uid="uid://ca3bus6tq4ba5" path="res://Cards/ItemData/smallCup.tres" id="4_8r5tn"]
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_uquqk")]
+script = ExtResource("2_qoerj")
+cardName = "Small Cup"
+item = ExtResource("3_8r5tn")
+itemData = ExtResource("4_8r5tn")
+
+[node name="Image" parent="." index="0" unique_id=288946348]
+scale = Vector2(0.4027778, 0.4027778)
+
+[node name="Name" parent="." index="1" unique_id=913472170]
+text = "Small Cup
+"
+
+[node name="BorderRed" parent="." index="2" unique_id=954847474]
+offset_right = 73.0
+offset_bottom = 102.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Desc1" parent="." index="7" unique_id=546903617]
+text = "+999 Reputation
++999 coins"

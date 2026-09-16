@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardExtraShift" format=3 uid="uid://c8tnlgcajubqb"]
+
+[ext_resource type="Script" uid="uid://ck4nxis2ve6jp" path="res://Cards/Scripts/extra_shift.gd" id="1_fshkx"]
+
+[resource]
+script = ExtResource("1_fshkx")
+cost = 2
+cardName = "Extra Shift"
+description = "Extend the time by 2"
+limitedUses = true
+maxUses = 1
+spawnItem = false
+metadata/_custom_type_script = "uid://ck4nxis2ve6jp"

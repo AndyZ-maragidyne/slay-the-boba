@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ckmefjcaf1dyt"]
+
+[ext_resource type="Script" uid="uid://cenmim38sb5m2" path="res://items/itemData.gd" id="1_oecga"]
+
+[resource]
+script = ExtResource("1_oecga")
+itemName = "Milky Tea"
+category = 1
+pointValue = 1
+coinValue = 2
+liquidType = 1
+color = Color(0.6314813, 0.36253166, 0.24344769, 1)
+metadata/_custom_type_script = "uid://cenmim38sb5m2"

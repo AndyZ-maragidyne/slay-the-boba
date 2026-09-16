@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardOvertime" format=3 uid="uid://clmxopbof15ca"]
+
+[ext_resource type="Script" uid="uid://vnnjulfg8k1b" path="res://Cards/Scripts/overtime.gd" id="1_75ehl"]
+
+[resource]
+script = ExtResource("1_75ehl")
+cost = 4
+cardName = "Overtime"
+description = "Extend the time by 5"
+limitedUses = true
+maxUses = 1
+spawnItem = false
+metadata/_custom_type_script = "uid://vnnjulfg8k1b"

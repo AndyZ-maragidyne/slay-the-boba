@@ -1,7 +1,9 @@
-extends Card
+extends CardData
+class_name CardRefineCrystals
 
-var crystalBobaScene = preload("res://Cards/CrystalBoba.tscn")
+var crystalBobaScene = preload("res://Cards/CrystalBoba.tres")
+#TODO IF IT CRASHES HERE FIX. since we dont have crystal boba cards anymore and I didnt test the new solution
 
-func onAbility():
-	var hi = crystalBobaScene.instantiate()
-	get_parent().discard.append(hi)
+func onAbility(card, player):
+	var hi = Card.create(crystalBobaScene)
+	player.getHand().discard.append(hi)

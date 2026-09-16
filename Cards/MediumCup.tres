@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dhkl7q6ogvkr7"]
+
+[ext_resource type="PackedScene" uid="uid://bnpiwsesyiw27" path="res://items/medium cup.tscn" id="1_bwhgd"]
+[ext_resource type="Script" uid="uid://b0aj8a2cxyl1f" path="res://Cards/Scripts/cardData.gd" id="1_ui3oe"]
+[ext_resource type="Resource" uid="uid://cbih7lbeoh8ty" path="res://Cards/ItemData/MediumCup.tres" id="2_o3u1o"]
+
+[resource]
+script = ExtResource("1_ui3oe")
+cost = 1
+cardName = "Medium Cup"
+description = "-1 rep for each unfill section"
+item = ExtResource("1_bwhgd")
+itemData = ExtResource("2_o3u1o")
+metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

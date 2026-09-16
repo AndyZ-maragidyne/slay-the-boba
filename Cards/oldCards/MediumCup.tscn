@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bnr0fuy4s6hgc"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_haql7"]
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_haql7")]
+
+[node name="Name" parent="." index="1" unique_id=913472170]
+text = "Medium Cup"

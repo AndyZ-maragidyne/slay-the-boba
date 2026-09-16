@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cvfytja4jxh5f"]
+
+[ext_resource type="PackedScene" uid="uid://sut132ecpcrm" path="res://items/small cup.tscn" id="1_bprd3"]
+[ext_resource type="Script" uid="uid://b0aj8a2cxyl1f" path="res://Cards/Scripts/cardData.gd" id="1_kmvuv"]
+[ext_resource type="Script" uid="uid://cenmim38sb5m2" path="res://items/itemData.gd" id="2_kvxyi"]
+
+[sub_resource type="Resource" id="Resource_sdxfc"]
+resource_name = "CardItemData"
+script = ExtResource("2_kvxyi")
+itemName = "Small Cup"
+pointValue = 1
+coinValue = 1
+size = 1
+metadata/_custom_type_script = "uid://cenmim38sb5m2"
+
+[resource]
+script = ExtResource("1_kmvuv")
+cardName = "Small Cup"
+item = ExtResource("1_bprd3")
+itemData = SubResource("Resource_sdxfc")
+metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

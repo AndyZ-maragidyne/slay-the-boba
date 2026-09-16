@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardEatIngredients" format=3 uid="uid://bnefcsnphtwqo"]
+
+[ext_resource type="Script" uid="uid://cvidsio2tf68a" path="res://Cards/Scripts/eat_ingredients.gd" id="1_auy7m"]
+
+[resource]
+script = ExtResource("1_auy7m")
+cardName = "Eat Ingredients"
+description = "+1 Energy
+-5 Rep"
+limitedUses = true
+maxUses = 1
+spawnItem = false
+metadata/_custom_type_script = "uid://cvidsio2tf68a"

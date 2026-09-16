@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dnjkyq4uj4gb6"]
+
+[ext_resource type="Script" uid="uid://cenmim38sb5m2" path="res://items/itemData.gd" id="1_jv85n"]
+
+[resource]
+script = ExtResource("1_jv85n")
+itemName = "Instant Tapioca"
+category = 2
+pointValue = 2
+coinValue = 3
+metadata/_custom_type_script = "uid://cenmim38sb5m2"

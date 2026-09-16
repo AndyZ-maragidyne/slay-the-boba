@@ -2,27 +2,51 @@ extends Node2D
 
 class_name Card
 
-@export var cost: int
-@export var cardName: String
-@export_multiline var description: String
-@export var item: PackedScene
+@export var data: CardData
+var player
+@export var cost:int
+@export var cardName:String
+@export var description:String
+@export var item:PackedScene
 @export var limitedUses:bool = false
-@export var maxUses: int = -1
-@onready var uses = maxUses
-@export var spawnItem: bool = true
-@export var itemData: ItemData
+@export var maxUses:int = -1
+@export var spawnItem:bool = true
+@export var itemData:Resource
 
+@onready var uses:int
 
 @onready var borderRed: ReferenceRect = $BorderRed
 @onready var borderBlue: ReferenceRect = $BorderBlue
 @onready var borderYellow: ReferenceRect = $BorderYellow
 @onready var borderGreen: ReferenceRect = $BorderGreen
 
+static func create(blueprint: CardData) -> Card:
+	var scene = preload("res://Cards/Card.tscn")
+	var instance = scene.instantiate()
+	
+	instance.data = blueprint
+	instance.loadInfo()
+	return instance
+
 func _ready() -> void:
 	borderRed.visible = false
 	borderBlue.visible = false
 	borderYellow.visible = false
 	borderGreen.visible = false
+	
+	setupUI()
+
+func loadInfo():
+	cost = data.cost
+	cardName = data.cardName
+	description = data.description
+	item = data.item
+	limitedUses = data.limitedUses
+	maxUses = data.maxUses
+	spawnItem = data.spawnItem
+	itemData = data.itemData
+	
+func setupUI() -> void:
 	$Cost.text = str(cost)
 	$Name.text = cardName
 	if itemData:
@@ -34,7 +58,7 @@ func _ready() -> void:
 		$UsesLeft.text = str(uses) + " use"
 	else:
 		$UsesLeft.text = ""
-	
+
 
 func set_selected(is_selected: bool, playerId) -> void:
 	match playerId:
@@ -50,12 +74,18 @@ func set_selected(is_selected: bool, playerId) -> void:
 
 #Whenever the card gets played
 func onPlay():
-	onAbility()
+	data.onAbility(self, player)
 	if limitedUses:
 		uses -= 1
 		$UsesLeft.text = str(uses) + " use"
 	pass
 
-#specific ability for the card
-func onAbility():
-	pass
+func modifyCost(newcost):
+	cost += newcost
+	$Cost.text = str(cost)
+
+func destroyCard() -> void:
+	queue_free()
+
+func setPlayer(person):
+	player = person

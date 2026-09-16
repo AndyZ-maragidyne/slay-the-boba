@@ -2,9 +2,11 @@ extends Node
 
 var joinedPlayers: Array[int] = []
 var totalCoins = 0
-var level = 1
+var level = 2
 var goal = [5, 10, 15, 20, 30, 40, 50, 65, 80, 100]
-
+var menu = Menu.new(3)
+#Root node of the scene
+var mainGame
 
 var playerDecks = {
 	0: [],

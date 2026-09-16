@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cakfm7y3ia5lw"]
+
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="1_tcwg5"]
+[ext_resource type="PackedScene" uid="uid://d0otaoiqfglfw" path="res://crystal_boba.tscn" id="2_qei7n"]
+[ext_resource type="Resource" uid="uid://bmhq7nimppnwu" path="res://Cards/ItemData/crystalBoba.tres" id="3_qei7n"]
+
+[node name="Node2D" unique_id=1288389349 instance=ExtResource("1_tcwg5")]
+cost = 1
+cardName = "Crystal Boba"
+item = ExtResource("2_qei7n")
+itemData = ExtResource("3_qei7n")

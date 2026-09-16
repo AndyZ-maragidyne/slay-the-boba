@@ -1,7 +1,7 @@
 extends Node2D
 class_name StoreShelf
 
-@export var itemPool: Array[PackedScene]
+@export var itemPool: Array[Resource]
 var shopItems = []
 var items = []
 
@@ -15,21 +15,21 @@ func shuffle():
 	
 func displayItems():
 	if itemPool.size() == 3:
-		var item1 = itemPool[0].instantiate()
+		var item1 = Card.create(itemPool[0])
 		add_child(item1)
 		items.append(item1)
 		shopItems.append(itemPool[0])
 		item1.position = Vector2(-200, 0)
-		var item2 = itemPool[1].instantiate()
-		add_child(item2)
-		items.append(item2)
-		shopItems.append(itemPool[1])
-		item2.position = Vector2(0, 0)
-		var item3 = itemPool[2].instantiate()
-		add_child(item3)
-		items.append(item3)
-		shopItems.append(itemPool[2])
-		item3.position = Vector2(200, 0)
+		#var item2 = itemPool[1].instantiate()
+		#add_child(item2)
+		#items.append(item2)
+		#shopItems.append(itemPool[1])
+		#item2.position = Vector2(0, 0)
+		#var item3 = itemPool[2].instantiate()
+		#add_child(item3)
+		#items.append(item3)
+		#shopItems.append(itemPool[2])
+		#item3.position = Vector2(200, 0)
 	elif itemPool.size() == 4:
 		var item1 = itemPool[0].instantiate()
 		add_child(item1)
