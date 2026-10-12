@@ -11,6 +11,9 @@ func upgradeCleanCards():
 			if "clean" in card.tags:
 				card.data.setDescription()
 				card.reloadUI()
-	
+	for card in globals.mainGame.shelf.displayCards:
+		if "clean" in card.tags:
+			card.data.setDescription()
+			card.reloadUI()
 	globals.broom_upgrade = true
 	pass
