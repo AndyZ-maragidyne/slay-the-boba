@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cq8ywp58vfmv1"]
+
+[ext_resource type="Script" uid="uid://b0aj8a2cxyl1f" path="res://Cards/Scripts/cardData.gd" id="1_r2dlv"]
+
+[resource]
+script = ExtResource("1_r2dlv")
+cardName = "Locked"
+description = "Purchase this to unlock"
+metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

@@ -1,9 +1,11 @@
 extends Node2D
 
-
+#-1 is keyboard
 var controllers:Array[int] = []
 var playerOrder:Array[int] = []
 
+#keeps track of the device ID for the keyboard (in case it changes)
+var keyboardId: int
 func _ready() -> void:
 	$P1.text = "Press X to connect..."
 	$P2.text = "Press X to connect..."
@@ -15,9 +17,15 @@ func _input(event: InputEvent) -> void:
 		print("pressed")
 		var device = event.device
 		if not controllers.has(device):
-			print(Input.get_joy_name(device))
-			controllers.append(device)
-			$ConnectedControllers.addController(Input.get_joy_name(device))
+			if event is InputEventKey:
+				controllers.append(device)
+				$ConnectedControllers.addController("Keyboard")
+				keyboardId = device
+			else:
+				print(Input.get_joy_name(device))
+				controllers.append(device)
+				$ConnectedControllers.addController(Input.get_joy_name(device))
+			
 	elif event.is_action_pressed("X"):
 		var device = event.device
 		if controllers.has(device) and not playerOrder.has(device):
@@ -29,7 +37,8 @@ func _input(event: InputEvent) -> void:
 			playerOrder.erase(device)
 			displayPlayers()
 	elif event.is_action_pressed("Y"):
-		startGame()
+		if playerOrder.size() > 0:
+			startGame()
 
 func assignPlayer(device):
 	if playerOrder.size() < 4:
@@ -43,18 +52,24 @@ func displayPlayers():
 	$P3.text = "Press X to connect..."
 	$P4.text = "Press X to connect..."
 	if playerOrder.size() >= 1:
-		$P1.text = "Player 1: " + str(Input.get_joy_name(playerOrder[0]))
+		$P1.text = "Player 1: " + getControllerName(0)
 	if playerOrder.size() >= 2:
-		$P2.text = "Player 2: " + str(Input.get_joy_name(playerOrder[1]))
+		$P2.text = "Player 2: " + getControllerName(1)
 	if playerOrder.size() >= 3:
-		$P3.text = "Player 3: " + str(Input.get_joy_name(playerOrder[2]))
+		$P3.text = "Player 3: " + getControllerName(2)
 	if playerOrder.size() >= 4:
-		$P4.text = "Player 4: " + str(Input.get_joy_name(playerOrder[3]))
+		$P4.text = "Player 4: " + getControllerName(3)
+
+func getControllerName(id):
+	if playerOrder[id] == keyboardId:
+		return "Keyboard"
+	else:
+		return str(Input.get_joy_name(playerOrder[id]))
 
 func startGame():
 	globals.joinedPlayers = playerOrder
 	initializeDecks()
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://shop.tscn")
 
 func initializeDecks():
 	var smallCup = preload("res://Cards/SmallCup.tres")
@@ -97,39 +112,40 @@ func initializeDecks():
 		#globals.playerDecks[index].append(cardS)
 
 		
-		var cardS = Card.create(smallCup)
-		globals.playerDecks[index].append(cardS)
-		cardS = Card.create(smallCup)
-		globals.playerDecks[index].append(cardS)
-		cardS = Card.create(mediumCup)
-		globals.playerDecks[index].append(cardS)
-		cardS = Card.create(mediumCup)
-		globals.playerDecks[index].append(cardS)
-		cardS = Card.create(largeCup)
-		globals.playerDecks[index].append(cardS)
-		cardS = Card.create(takeOrder)
-		globals.playerDecks[index].append(cardS)
-		cardS = Card.create(takeOrder)
-		globals.playerDecks[index].append(cardS)
-		cardS = Card.create(q1)
-		globals.playerDecks[index].append(cardS)
-		cardS = Card.create(q1)
-		globals.playerDecks[index].append(cardS)
-		cardS = Card.create(q1)
-		globals.playerDecks[index].append(cardS)
-		cardS = Card.create(q1)
-		globals.playerDecks[index].append(cardS)
-		cardS = Card.create(q1)
-		globals.playerDecks[index].append(cardS)
-		cardS = Card.create(q3)
-		globals.playerDecks[index].append(cardS)
-		cardS = Card.create(q3)
-		globals.playerDecks[index].append(cardS)
-		cardS = Card.create(q3)
-		globals.playerDecks[index].append(cardS)
-		cardS = Card.create(q3)
-		globals.playerDecks[index].append(cardS)
-		cardS = Card.create(q3)
-		globals.playerDecks[index].append(cardS)
-		index += 1
+		#var cardS = Card.create(smallCup)
+		#globals.playerDecks[index].append(cardS)
+		#cardS = Card.create(smallCup)
+		#globals.playerDecks[index].append(cardS)
+		#cardS = Card.create(mediumCup)
+		#globals.playerDecks[index].append(cardS)
+		#cardS = Card.create(mediumCup)
+		#globals.playerDecks[index].append(cardS)
+		#cardS = Card.create(largeCup)
+		#globals.playerDecks[index].append(cardS)
+		#cardS = Card.create(takeOrder)
+		#globals.playerDecks[index].append(cardS)
+		#cardS = Card.create(takeOrder)
+		#globals.playerDecks[index].append(cardS)
+		#cardS = Card.create(q1)
+		#globals.playerDecks[index].append(cardS)
+		#cardS = Card.create(q1)
+		#globals.playerDecks[index].append(cardS)
+		#cardS = Card.create(q1)
+		#globals.playerDecks[index].append(cardS)
+		#cardS = Card.create(q1)
+		#globals.playerDecks[index].append(cardS)
+		#cardS = Card.create(q1)
+		#globals.playerDecks[index].append(cardS)
+		#cardS = Card.create(q3)
+		#globals.playerDecks[index].append(cardS)
+		#cardS = Card.create(q3)
+		#globals.playerDecks[index].append(cardS)
+		#cardS = Card.create(q3)
+		#globals.playerDecks[index].append(cardS)
+		#cardS = Card.create(q3)
+		#globals.playerDecks[index].append(cardS)
+		#cardS = Card.create(q3)
+		#globals.playerDecks[index].append(cardS)
+		#index += 1
+		pass
 	

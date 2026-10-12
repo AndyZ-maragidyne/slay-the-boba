@@ -51,18 +51,18 @@ func _input(event: InputEvent) -> void:
 		return
 	
 func handle_card_selection_input(event:InputEvent) -> void:
-	if event.is_action_pressed("Select_R_%s" % playerId) and event.device == deviceId:
+	if event.is_action_pressed("Select_R") and event.device == deviceId:
 		selected_index = (selected_index + 1) % hand.size()
 		update_hand_layout()
 		
-	elif event.is_action_pressed("Select_L_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_pressed("Select_L") and event.device == deviceId:
 		if selected_index <= 0:
 			selected_index = hand.size() - 1
 		else:
 			selected_index -= 1
 		update_hand_layout()
 	
-	elif event.is_action_pressed("A_%s" % playerId) and selected_index != -1 and event.device == deviceId:
+	elif event.is_action_pressed("A") and selected_index != -1 and event.device == deviceId:
 		if hand[selected_index]:
 			hand[selected_index].set_selected(false, playerId)
 			if hand[selected_index].spawnItem:
@@ -79,7 +79,7 @@ func handle_drink_selection_input(event:InputEvent) -> void:
 		exit_targeting_mode()
 		return
 	
-	if event.is_action_pressed("Select_L_%s" % playerId) and event.device == deviceId or event.is_action_pressed("Left_%s" % playerId) and event.device == deviceId:
+	if event.is_action_pressed("Select_L") and event.device == deviceId or event.is_action_pressed("Left_%s" % playerId) and event.device == deviceId:
 		var current_spot = get_active_spot()
 		if current_spot != null:
 			current_spot.set_selected(false, playerId)
@@ -89,7 +89,7 @@ func handle_drink_selection_input(event:InputEvent) -> void:
 		var new_spot = get_active_spot()
 		if new_spot != null:
 			new_spot.set_selected(true, playerId)
-	elif event.is_action_pressed("Select_R_%s" % playerId) and event.device == deviceId or event.is_action_pressed("Right_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_pressed("Select_R")and event.device == deviceId or event.is_action_pressed("Right_%s" % playerId) and event.device == deviceId:
 		var new_spot = get_active_spot()
 		if new_spot != null:
 			new_spot.set_selected(false, playerId)
@@ -103,20 +103,20 @@ func handle_drink_selection_input(event:InputEvent) -> void:
 		if new_spot != null:
 			new_spot.set_selected(true, playerId)
 	
-	elif event.is_action_pressed("A_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_pressed("A") and event.device == deviceId:
 		var new_spot = get_active_spot()
 		if new_spot != null:
 			new_spot.set_selected(false, playerId)
 		play_selected_card()
 	
-	elif event.is_action_pressed("B_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_pressed("B") and event.device == deviceId:
 		var new_spot = get_active_spot()
 		if new_spot != null:
 			new_spot.set_selected(false, playerId)
 		if hand[selected_index]:
 			hand[selected_index].set_selected(true, playerId)
 		exit_targeting_mode()
-	elif event.is_action_pressed("Up_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_pressed("Up") and event.device == deviceId:
 		if selectedRow == 1:
 			var new_spot = get_active_spot()
 			if new_spot != null:
@@ -128,7 +128,7 @@ func handle_drink_selection_input(event:InputEvent) -> void:
 			new_spot = get_active_spot()
 			if new_spot != null:
 				new_spot.set_selected(true, playerId)
-	elif event.is_action_pressed("Down_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_pressed("Down") and event.device == deviceId:
 		if selectedRow == 0:
 			var new_spot = get_active_spot()
 			if new_spot != null:

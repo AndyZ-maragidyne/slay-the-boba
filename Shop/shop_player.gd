@@ -9,6 +9,9 @@ var deck = []
 var readyUp = false
 var endTurn = false
 
+#Variable to store the card that the player is holding to replace
+var holdingReplacingCard
+var holdingReplacingCardReal
 func _ready() -> void:
 	if playerId == 0:
 		$Icon1.visible = true
@@ -19,44 +22,73 @@ func _ready() -> void:
 	elif playerId == 3:
 		$Icon4.visible = true
 
+#change to unhandled?
 func _input(event: InputEvent) -> void:
+	var statesenum = globals.mainGame.MenuState
+	var states = globals.mainGame.playerStates
+	if not states.has(playerId):
+		states[playerId] = statesenum.NORMAL
+	
+	if states[playerId] == statesenum.NORMAL:
+		handleNormal(event)
+	elif states[playerId] == statesenum.REPLACING_CARD:
+		handleReplacing(event)
+
+func handleNormal(event):
 	if event.is_action_pressed("Select_R_%s" % playerId) and event.device == deviceId:
 		if !readyUp:
 			get_parent().get_parent().getInput(event, playerId)
 	elif event.is_action_pressed("Select_L_%s" % playerId) and event.device == deviceId:
 		if !readyUp:
 			get_parent().get_parent().getInput(event, playerId)
-	elif event.is_action_pressed("Left_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_pressed("Left") and event.device == deviceId:
 		if !readyUp:
-			get_parent().get_parent().getInput(event, playerId)
-	elif event.is_action_pressed("Right_%s" % playerId) and event.device == deviceId:
+			globals.mainGame.moveSelection(event, playerId)
+	elif event.is_action_pressed("Right") and event.device == deviceId:
 		if !readyUp:
-			get_parent().get_parent().getInput(event, playerId)
-	elif event.is_action_pressed("Up_%s" % playerId) and event.device == deviceId:
+			globals.mainGame.moveSelection(event, playerId)
+	elif event.is_action_pressed("Up") and event.device == deviceId:
 		if !readyUp:
-			get_parent().get_parent().getInput(event, playerId)
-	elif event.is_action_pressed("Down_%s" % playerId) and event.device == deviceId:
+			globals.mainGame.moveSelection(event, playerId)
+	elif event.is_action_pressed("Down") and event.device == deviceId:
 		if !readyUp:
-			get_parent().get_parent().getInput(event, playerId)
-	elif event.is_action_pressed("A_%s" % playerId) and event.device == deviceId:
-		var item = get_parent().get_parent().getItemData(playerId)
-		print(item)
-		if item.card and item.cost <= coins:
-			var product = item.Item.instantiate()
-			globals.getDeck(playerId).append(product)
-			setCoins(-item.cost)
-	elif event.is_action_pressed("Select_R2_%s" % playerId) and event.device == deviceId:
+			globals.mainGame.moveSelection(event, playerId)
+	elif event.is_action_pressed("A") and event.device == deviceId:
+		var item = globals.mainGame.getItemData(playerId)
+		if item.price <= coins:
+			item.buyItem(playerId)
+			setCoins(-item.price)
+	elif event.is_action_pressed("Select_R2") and event.device == deviceId:
 		displayDeck()
 		pass
-	elif event.is_action_released("Select_R2_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_released("Select_R2") and event.device == deviceId:
 		unDisplayDeck()
-	elif event.is_action_pressed("Y_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_pressed("Y" % playerId) and event.device == deviceId:
 		readyUp = !readyUp
 		$Ready.visible = readyUp
 		if readyUp:
 			get_parent().checkReadyUp()
-		
 
+func handleReplacing(event):
+	if event.is_action_pressed("Left") and event.device == deviceId:
+		if !readyUp:
+			globals.mainGame.cardReplaceSelection(event, playerId)
+	elif event.is_action_pressed("Right") and event.device == deviceId:
+		if !readyUp:
+			globals.mainGame.cardReplaceSelection(event, playerId)
+	elif event.is_action_pressed("Up") and event.device == deviceId:
+		if !readyUp:
+			globals.mainGame.cardReplaceSelection(event, playerId)
+	elif event.is_action_pressed("Down") and event.device == deviceId:
+		if !readyUp:
+			globals.mainGame.cardReplaceSelection(event, playerId)
+	elif event.is_action_pressed("A") and event.device == deviceId:
+		var item = globals.mainGame.getItemData(playerId)
+		item.stockCard(holdingReplacingCard)
+		globals.mainGame.shelf.displayItems()
+		globals.mainGame.playerStates[playerId] = globals.mainGame.MenuState.NORMAL
+		holdingReplacingCardReal.queue_free()
+		
 func setCoins(value:int):
 	coins += value
 	$Coins.text = "$" + str(coins)

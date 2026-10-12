@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b8qiahk4e1f7h"]
+
+[ext_resource type="Script" uid="uid://oil1ecxusowb" path="res://upgrades_shelf.gd" id="1_o8cvk"]
+
+[node name="UpgradesShelf" type="Node2D" unique_id=441678697]
+script = ExtResource("1_o8cvk")

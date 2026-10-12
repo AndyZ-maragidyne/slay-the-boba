@@ -33,6 +33,8 @@ func setup():
 	$TimeLeft.text = "Time Left: " + str(timeLeft)
 	
 	#setup the modifiers
+	
+	activeModifiers = globals.modifiers
 	for i in activeModifiers:
 		i.onStartDay()
 	startTurn()
@@ -107,6 +109,12 @@ func endDay():
 	else:
 		var zero = 0
 		1/zero
+	
+	#process all the modifiers
+	for m in activeModifiers:
+		var remove = m.endOfDay()
+		if remove:
+			activeModifiers.erase(m)
 	pass
 
 func extendTime(time:int):

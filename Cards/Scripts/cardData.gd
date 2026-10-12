@@ -9,6 +9,13 @@ class_name CardData
 @export var maxUses:int = -1
 @export var spawnItem:bool = true
 @export var itemData:Resource
+@export var tags:Array[String] = []
+
+func _init() -> void:
+	pass
+
+func setDescription():
+	pass
 
 func onAbility(card, player) -> void:
 	pass

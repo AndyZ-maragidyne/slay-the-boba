@@ -40,13 +40,13 @@ func shuffle():
 func getHand():
 	return $Hand
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("X_%s" % playerId) and event.device == deviceId:
+	if event.is_action_pressed("X" % playerId) and event.device == deviceId:
 		#send order
 		if get_parent().get_parent().get_node("Drinks").drinkSpots.size() > 0:
 			get_parent().get_parent().get_node("Drinks").sendOrder()
 			get_parent().get_parent().modifyOrderAutoSending(false)
 		pass
-	elif event.is_action_pressed("Y_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_pressed("Y" % playerId) and event.device == deviceId:
 		#end turn
 		endTurn = !endTurn
 		if endTurn:
@@ -61,7 +61,7 @@ func _input(event: InputEvent) -> void:
 			)
 		else:
 			get_parent().setPlayerPositions()
-	elif event.is_action_pressed("Select_L2_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_pressed("Select_L2" % playerId) and event.device == deviceId:
 		hide = !hide
 		if hide:
 			var discard_tween = create_tween().set_parallel(true)
@@ -70,13 +70,13 @@ func _input(event: InputEvent) -> void:
 			get_parent().setPlayerPositions()
 		else:
 			get_parent().setPlayerPositions()
-	elif event.is_action_pressed("Select_R2_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_pressed("Select_R2" % playerId) and event.device == deviceId:
 		displayDeck()
 		pass
-	elif event.is_action_released("Select_R2_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_released("Select_R2" % playerId) and event.device == deviceId:
 		unDisplayDeck()
 	#This is all for selecting the measuring cups
-	elif event.is_action_pressed("Up_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_pressed("Up" % playerId) and event.device == deviceId:
 		if $Hand.currentState == $Hand.selectState.SELECTING_CARD:
 			$Hand.currentState = $Hand.selectState.OTHER
 			mixingSelectedIndex = 0
@@ -84,13 +84,13 @@ func _input(event: InputEvent) -> void:
 				$Hand.hand[$Hand.selected_index].set_selected(false, playerId)
 			mixingSpots = get_parent().get_parent().get_node("Mixing").mixingSpots
 			mixingSpots[mixingSelectedIndex].set_selected(true, playerId)
-	elif event.is_action_pressed("Down_%s" % playerId) and event.device == deviceId or event.is_action_pressed("B_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_pressed("Down" % playerId) and event.device == deviceId or event.is_action_pressed("B_%s" % playerId) and event.device == deviceId:
 		if $Hand.currentState == $Hand.selectState.OTHER:
 			mixingSpots[mixingSelectedIndex].set_selected(false, playerId)
 			$Hand.currentState = $Hand.selectState.SELECTING_CARD
 			if $Hand.hand[$Hand.selected_index]:
 				$Hand.hand[$Hand.selected_index].set_selected(true, playerId)
-	elif event.is_action_pressed("Left_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_pressed("Left" % playerId) and event.device == deviceId:
 		if $Hand.currentState == $Hand.selectState.OTHER:
 			mixingSpots[mixingSelectedIndex].set_selected(false, playerId)
 			if mixingSelectedIndex >= mixingSpots.size() - 1:
@@ -98,7 +98,7 @@ func _input(event: InputEvent) -> void:
 			else:
 				mixingSelectedIndex += 1
 			mixingSpots[mixingSelectedIndex].set_selected(true, playerId)
-	elif event.is_action_pressed("Right_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_pressed("Right" % playerId) and event.device == deviceId:
 		if $Hand.currentState == $Hand.selectState.OTHER:
 			mixingSpots[mixingSelectedIndex].set_selected(false, playerId)
 			if mixingSelectedIndex < 0:
@@ -106,7 +106,7 @@ func _input(event: InputEvent) -> void:
 			else:
 				mixingSelectedIndex -= 1
 			mixingSpots[mixingSelectedIndex].set_selected(true, playerId)
-	elif event.is_action_pressed("A_%s" % playerId) and event.device == deviceId:
+	elif event.is_action_pressed("A" % playerId) and event.device == deviceId:
 		if $Hand.currentState == $Hand.selectState.OTHER and mixingSpots[mixingSelectedIndex].isReady:
 			var output = mixingSpots[mixingSelectedIndex].grabDrink()
 			if output:

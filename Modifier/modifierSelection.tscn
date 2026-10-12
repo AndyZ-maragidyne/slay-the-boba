@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://br6gma5gyso5u"]
+
+[ext_resource type="Script" uid="uid://dqf8rvyshhdqr" path="res://Modifier/modifier_selection.gd" id="1_luoc6"]
+[ext_resource type="Texture2D" uid="uid://br8m58cb1bqam" path="res://picutres/purple.png" id="2_m8vfg"]
+[ext_resource type="Texture2D" uid="uid://dmv5sfovi8jed" path="res://picutres/grey.png" id="3_5ycfu"]
+
+[node name="Node2D" type="Node2D" unique_id=447088438]
+script = ExtResource("1_luoc6")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1772259660]
+
+[node name="Purple" type="Sprite2D" parent="UI" unique_id=873713491]
+position = Vector2(987.49994, 516.75)
+scale = Vector2(0.7557291, 0.6652778)
+texture = ExtResource("2_m8vfg")
+
+[node name="Grey" type="Sprite2D" parent="UI" unique_id=672696044]
+position = Vector2(617, 520.00006)
+scale = Vector2(0.5175926, 0.5175926)
+texture = ExtResource("3_5ycfu")
+
+[node name="Grey2" type="Sprite2D" parent="UI" unique_id=1901646369]
+position = Vector2(1366, 517)
+scale = Vector2(0.5175926, 0.5175926)
+texture = ExtResource("3_5ycfu")
+
+[node name="Mod1" type="Node2D" parent="UI" unique_id=171047169]
+
+[node name="title" type="Label" parent="UI/Mod1" unique_id=1670663697]
+offset_left = 348.0
+offset_top = 246.0
+offset_right = 899.0
+offset_bottom = 394.0
+theme_override_font_sizes/font_size = 95
+text = "Title1"
+
+[node name="desc" type="Label" parent="UI/Mod1" unique_id=581192500]
+offset_left = 346.0
+offset_top = 398.0
+offset_right = 897.0
+offset_bottom = 786.0
+theme_override_font_sizes/font_size = 47
+text = "description"
+
+[node name="Mod2" type="Node2D" parent="UI" unique_id=1526880358]
+
+[node name="title" type="Label" parent="UI/Mod2" unique_id=191948382]
+offset_left = 1105.0
+offset_top = 246.0
+offset_right = 1656.0
+offset_bottom = 394.0
+theme_override_font_sizes/font_size = 95
+text = "Title1"
+
+[node name="desc" type="Label" parent="UI/Mod2" unique_id=1603755713]
+offset_left = 1086.0
+offset_top = 390.0
+offset_right = 1637.0
+offset_bottom = 778.0
+theme_override_font_sizes/font_size = 47
+text = "description"
+
+[node name="BorderRed" type="ReferenceRect" parent="UI" unique_id=14334982]
+visible = false
+offset_left = 339.0
+offset_top = 252.0
+offset_right = 907.0
+offset_bottom = 792.0
+border_width = 10.0
+editor_only = false
+
+[node name="BorderBlue" type="ReferenceRect" parent="UI" unique_id=1990343149]
+visible = false
+offset_left = 339.0
+offset_top = 252.0
+offset_right = 914.0
+offset_bottom = 804.0
+border_color = Color(0, 0, 1, 1)
+border_width = 10.0
+editor_only = false
+
+[node name="BorderYellow" type="ReferenceRect" parent="UI" unique_id=92190278]
+visible = false
+offset_left = 339.0
+offset_top = 252.0
+offset_right = 897.0
+offset_bottom = 781.0
+border_color = Color(1, 1, 0, 1)
+border_width = 10.0
+editor_only = false
+
+[node name="BorderGreen" type="ReferenceRect" parent="UI" unique_id=1177990753]
+visible = false
+offset_left = 339.0
+offset_top = 252.0
+offset_right = 924.0
+offset_bottom = 806.0
+border_color = Color(0, 1, 0, 1)
+border_width = 10.0
+editor_only = false
+
+[node name="BorderRed2" type="ReferenceRect" parent="UI" unique_id=1768819215]
+visible = false
+offset_left = 1080.0
+offset_top = 240.0
+offset_right = 1648.0
+offset_bottom = 780.0
+border_width = 10.0
+editor_only = false
+
+[node name="BorderBlue2" type="ReferenceRect" parent="UI" unique_id=11076861]
+visible = false
+offset_left = 1080.0
+offset_top = 240.0
+offset_right = 1655.0
+offset_bottom = 792.0
+border_color = Color(0, 0, 1, 1)
+border_width = 10.0
+editor_only = false
+
+[node name="BorderYellow2" type="ReferenceRect" parent="UI" unique_id=745956193]
+visible = false
+offset_left = 1080.0
+offset_top = 240.0
+offset_right = 1638.0
+offset_bottom = 769.0
+border_color = Color(1, 1, 0, 1)
+border_width = 10.0
+editor_only = false
+
+[node name="BorderGreen2" type="ReferenceRect" parent="UI" unique_id=1572764177]
+visible = false
+offset_left = 1080.0
+offset_top = 240.0
+offset_right = 1665.0
+offset_bottom = 794.0
+border_color = Color(0, 1, 0, 1)
+border_width = 10.0
+editor_only = false

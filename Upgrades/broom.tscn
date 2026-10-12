@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://brybyfnuh4d1x"]
+
+[ext_resource type="Script" uid="uid://mbobecf3jc8f" path="res://Upgrades/Scripts/broomUpgrade.gd" id="1_rqu3b"]
+[ext_resource type="Texture2D" uid="uid://bsrxpdg62c36r" path="res://picutres/broom.png" id="1_yl5yw"]
+
+[node name="Broom" type="Node2D" unique_id=1872451174]
+script = ExtResource("1_rqu3b")
+clickable = null
+
+[node name="Broom" type="Sprite2D" parent="." unique_id=2108086217]
+scale = Vector2(0.15100001, 0.15100001)
+texture = ExtResource("1_yl5yw")
+
+[node name="BorderRed" type="ReferenceRect" parent="." unique_id=974006578]
+visible = false
+offset_left = -36.0
+offset_top = -51.0
+offset_right = 36.0
+offset_bottom = 51.0
+border_width = 2.0
+editor_only = false
+metadata/_edit_use_anchors_ = true
+
+[node name="BorderBlue" type="ReferenceRect" parent="." unique_id=258411374]
+visible = false
+offset_left = -37.0
+offset_top = -52.0
+offset_right = 37.0
+offset_bottom = 52.0
+border_color = Color(0, 0, 1, 1)
+border_width = 2.0
+editor_only = false
+metadata/_edit_use_anchors_ = true
+
+[node name="BorderYellow" type="ReferenceRect" parent="." unique_id=748742912]
+visible = false
+offset_left = -38.0
+offset_top = -53.0
+offset_right = 38.0
+offset_bottom = 53.0
+border_color = Color(1, 1, 0, 1)
+border_width = 2.0
+editor_only = false
+metadata/_edit_use_anchors_ = true
+
+[node name="BorderGreen" type="ReferenceRect" parent="." unique_id=561250616]
+visible = false
+offset_left = -39.0
+offset_top = -54.0
+offset_right = 39.0
+offset_bottom = 54.0
+border_color = Color(0, 1, 0, 1)
+border_width = 2.0
+editor_only = false
+metadata/_edit_use_anchors_ = true

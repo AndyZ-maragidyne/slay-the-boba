@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://xl13i70iixw7"]
+
+[ext_resource type="Script" uid="uid://cy686lerft61d" path="res://Shop/card_replacement_listing_object.gd" id="1_hlwj7"]
+[ext_resource type="PackedScene" uid="uid://dhxpr3h06ogvy" path="res://Cards/Card.tscn" id="3_hlwj7"]
+
+[node name="CardReplacementObject" type="Node2D" unique_id=1666174584]
+script = ExtResource("1_hlwj7")
+
+[node name="Card" parent="." unique_id=1288389349 instance=ExtResource("3_hlwj7")]
+
+[node name="Image" parent="Card" index="0" unique_id=288946348]
+scale = Vector2(0.2, 0.2)
+
+[node name="Name" parent="Card" index="1" unique_id=913472170]
+visible = false
+
+[node name="BorderRed" parent="Card" index="2" unique_id=954847474]
+offset_left = -36.0
+offset_top = -51.0
+offset_right = 36.0
+offset_bottom = 51.0
+
+[node name="BorderBlue" parent="Card" index="3" unique_id=903679077]
+offset_left = -37.0
+offset_top = -52.0
+offset_right = 37.0
+offset_bottom = 52.0
+
+[node name="BorderYellow" parent="Card" index="4" unique_id=1963785853]
+offset_left = -38.0
+offset_top = -53.0
+offset_right = 38.0
+offset_bottom = 53.0
+
+[node name="BorderGreen" parent="Card" index="5" unique_id=268276036]
+offset_left = -39.0
+offset_top = -54.0
+offset_right = 39.0
+offset_bottom = 54.0
+
+[node name="Cost" parent="Card" index="6" unique_id=1864455245]
+visible = false
+
+[node name="Desc1" parent="Card" index="7" unique_id=546903617]
+visible = false
+
+[node name="Desc2" parent="Card" index="8" unique_id=2118571226]
+visible = false
+
+[node name="UsesLeft" parent="Card" index="9" unique_id=2109200677]
+visible = false
+
+[editable path="Card"]

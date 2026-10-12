@@ -3,15 +3,27 @@
 [ext_resource type="Script" uid="uid://tohbvg4igs20" path="res://shop.gd" id="1_viryw"]
 [ext_resource type="Texture2D" uid="uid://dtysaqcoq8xvb" path="res://picutres/shopbackground.png" id="2_acxsc"]
 [ext_resource type="PackedScene" uid="uid://cbkgy8vatrsup" path="res://store_shelf.tscn" id="2_e7rdd"]
+[ext_resource type="Resource" uid="uid://w6jjisnihmcu" path="res://Cards/Tea.tres" id="2_k3iel"]
+[ext_resource type="Resource" uid="uid://uckvyjgevhyi" path="res://Cards/Boba.tres" id="3_2807j"]
 [ext_resource type="PackedScene" uid="uid://vbmtijwgma3y" path="res://Shop/ShopPlayer.tscn" id="4_6lah5"]
-[ext_resource type="Resource" uid="uid://bamcrov8ph0bn" path="res://Cards/MilkyTea.tres" id="4_il0eq"]
+[ext_resource type="Resource" uid="uid://b1o35sltj3jk6" path="res://Cards/Milk.tres" id="4_u7exk"]
+[ext_resource type="Resource" uid="uid://bjlaiw2e5hgwq" path="res://Cards/Clean.tres" id="5_db3q1"]
+[ext_resource type="Resource" uid="uid://0ij1ft8q6mll" path="res://Cards/Water.tres" id="6_8f8xc"]
 [ext_resource type="Script" uid="uid://cg46e30ak6tpa" path="res://playerManagerShop.gd" id="7_8kdgp"]
-[ext_resource type="Texture2D" uid="uid://bb3w3pstvrjlx" path="res://picutres/boba keychain.png" id="22_u7exk"]
-[ext_resource type="Texture2D" uid="uid://cpkgvjhakdjfs" path="res://picutres/boba reward.png" id="23_db3q1"]
-[ext_resource type="Texture2D" uid="uid://baol7ssrixmbj" path="res://picutres/d7ffe0cfb53b47edf78fd096ec33050c.jpg" id="24_8f8xc"]
+[ext_resource type="Resource" uid="uid://jakrtoq36oep" path="res://Cards/LargeCup.tres" id="7_g4q3a"]
+[ext_resource type="Resource" uid="uid://clmxopbof15ca" path="res://Cards/Overtime.tres" id="8_bv3hj"]
+[ext_resource type="Resource" uid="uid://dhkl7q6ogvkr7" path="res://Cards/MediumCup.tres" id="9_lccd8"]
+[ext_resource type="Resource" uid="uid://ceo1aoypby27p" path="res://Cards/TakeOrder.tres" id="10_ckaty"]
+[ext_resource type="Resource" uid="uid://c8tnlgcajubqb" path="res://Cards/ExtraShift.tres" id="11_ugyvi"]
+[ext_resource type="Resource" uid="uid://dbi5edull1p3s" path="res://Cards/PrepareBoba.tres" id="12_kdli5"]
+[ext_resource type="Resource" uid="uid://bnefcsnphtwqo" path="res://Cards/EatIngredients.tres" id="13_ebk4j"]
+[ext_resource type="Resource" uid="uid://sw6a2i2law6h" path="res://Cards/RefineCrystals.tres" id="14_bnjor"]
+[ext_resource type="PackedScene" uid="uid://b8qiahk4e1f7h" path="res://upgrades_shelf.tscn" id="20_il0eq"]
+[ext_resource type="PackedScene" uid="uid://xl13i70iixw7" path="res://Shop/card_replacement_listing.tscn" id="22_k3iel"]
 
 [node name="Shop" type="Node2D" unique_id=1168581076]
 script = ExtResource("1_viryw")
+cardPool = Array[Resource]([ExtResource("2_k3iel"), ExtResource("3_2807j"), ExtResource("4_u7exk"), ExtResource("5_db3q1"), ExtResource("6_8f8xc"), ExtResource("7_g4q3a"), ExtResource("8_bv3hj"), ExtResource("9_lccd8"), ExtResource("10_ckaty"), ExtResource("11_ugyvi"), ExtResource("12_kdli5"), ExtResource("13_ebk4j"), ExtResource("14_bnjor")])
 
 [node name="Shopbackground" type="Sprite2D" parent="." unique_id=373897826]
 position = Vector2(961.3354, 540.25)
@@ -26,45 +38,7 @@ theme_override_font_sizes/font_size = 62
 text = "Buy some cards"
 
 [node name="StoreShelf" parent="." unique_id=2143976579 instance=ExtResource("2_e7rdd")]
-visible = false
 position = Vector2(1440, 200)
-itemPool = Array[Resource]([ExtResource("4_il0eq"), ExtResource("4_il0eq"), ExtResource("4_il0eq")])
-
-[node name="StoreShelf2" parent="." unique_id=1804876247 instance=ExtResource("2_e7rdd")]
-visible = false
-position = Vector2(1440, 444)
-
-[node name="StoreShelf3" parent="." unique_id=211701911 instance=ExtResource("2_e7rdd")]
-visible = false
-position = Vector2(1440, 677)
-
-[node name="StoreShelf4" parent="." unique_id=908958416 instance=ExtResource("2_e7rdd")]
-visible = false
-position = Vector2(1440, 924)
-
-[node name="lock2" type="Label" parent="." unique_id=1670350497]
-offset_left = 1233.0
-offset_top = 397.0
-offset_right = 1654.0
-offset_bottom = 538.0
-theme_override_font_sizes/font_size = 60
-text = "Survive Day 2"
-
-[node name="lock3" type="Label" parent="." unique_id=1733863336]
-offset_left = 1233.0
-offset_top = 621.0
-offset_right = 1654.0
-offset_bottom = 762.0
-theme_override_font_sizes/font_size = 60
-text = "Survive Day 3"
-
-[node name="lock4" type="Label" parent="." unique_id=1457555322]
-offset_left = 1233.0
-offset_top = 889.0
-offset_right = 1654.0
-offset_bottom = 1030.0
-theme_override_font_sizes/font_size = 60
-text = "Survive Day 4"
 
 [node name="upgrades(store)" type="Label" parent="." unique_id=1895644386]
 offset_left = 50.0
@@ -88,37 +62,8 @@ theme_override_font_sizes/font_size = 53
 text = "Coming soon. Ngl this code is so bad im not making this rn"
 autowrap_mode = 3
 
-[node name="upgrades(store)2" type="Label" parent="." unique_id=282998294]
-visible = false
-offset_left = 604.0
-offset_right = 928.0
-offset_bottom = 140.0
-theme_override_font_sizes/font_size = 62
-text = "Rewards"
+[node name="CardReplacementListing" parent="." unique_id=1666174584 instance=ExtResource("22_k3iel")]
+position = Vector2(1870, 998)
 
-[node name="BobaKeychain" type="Sprite2D" parent="." unique_id=1881715878]
-visible = false
-position = Vector2(806, 337.00003)
-scale = Vector2(0.31790122, 0.31790122)
-texture = ExtResource("22_u7exk")
-
-[node name="BobaReward" type="Sprite2D" parent="." unique_id=276022490]
-visible = false
-position = Vector2(649, 330.00003)
-scale = Vector2(0.44435742, 0.44435745)
-texture = ExtResource("23_db3q1")
-
-[node name="Label" type="Label" parent="." unique_id=157448770]
-visible = false
-offset_left = 578.0
-offset_top = 460.0
-offset_right = 796.0
-offset_bottom = 527.0
-theme_override_font_sizes/font_size = 48
-text = "1,000,000"
-
-[node name="gemz" type="Sprite2D" parent="." unique_id=1072864743]
-visible = false
-position = Vector2(827.01105, 497.00003)
-scale = Vector2(0.06906081, 0.0690608)
-texture = ExtResource("24_8f8xc")
+[node name="UpgradesShelf" parent="." unique_id=441678697 instance=ExtResource("20_il0eq")]
+position = Vector2(662, 401)

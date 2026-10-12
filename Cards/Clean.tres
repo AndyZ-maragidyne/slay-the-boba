@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_g3jm4")
-description = "Increase Rep by 5
-Increase cost by 1"
+cardName = "Clean"
+spawnItem = false
 metadata/_custom_type_script = "uid://cs73wsd32a05a"

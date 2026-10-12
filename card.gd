@@ -11,6 +11,7 @@ var player
 @export var limitedUses:bool = false
 @export var maxUses:int = -1
 @export var spawnItem:bool = true
+@export var tags:Array[String]
 @export var itemData:Resource
 
 @onready var uses:int
@@ -45,6 +46,7 @@ func loadInfo():
 	maxUses = data.maxUses
 	spawnItem = data.spawnItem
 	itemData = data.itemData
+	tags = data.tags
 	
 func setupUI() -> void:
 	$Cost.text = str(cost)
@@ -59,6 +61,9 @@ func setupUI() -> void:
 	else:
 		$UsesLeft.text = ""
 
+func reloadUI():
+	loadInfo()
+	setupUI()
 
 func set_selected(is_selected: bool, playerId) -> void:
 	match playerId:

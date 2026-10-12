@@ -2,9 +2,11 @@ extends Node
 
 var joinedPlayers: Array[int] = []
 var totalCoins = 0
-var level = 2
+var level = 1
 var goal = [5, 10, 15, 20, 30, 40, 50, 65, 80, 100]
 var menu = Menu.new(3)
+var unlockedCardPool: Array[Array]
+var modifiers = []
 #Root node of the scene
 var mainGame
 
@@ -18,6 +20,16 @@ var playerDecks = {
 var playerData: Array[PlayerData] = [PlayerData.new(), PlayerData.new(), PlayerData.new(), PlayerData.new()]
 
 var bobaMachineProgress = 0
+
+func _ready() -> void:
+	setupUnlockedCards()
+	
+func setupUnlockedCards():
+	var smallCup = preload("res://Cards/SmallCup.tres")
+	var milkytea = preload("res://Cards/MilkyTea.tres")
+	var boba = preload("res://Cards/InstantTapioca.tres")
+	unlockedCardPool = [[CardListing.new(smallCup), CardListing.new(milkytea), CardListing.new(boba), CardListing.new()], [CardListing.new(), CardListing.new(), CardListing.new(), CardListing.new()], [CardListing.new(), CardListing.new(), CardListing.new(), CardListing.new()], [CardListing.new(), CardListing.new(), CardListing.new(), CardListing.new()]]
+
 
 func getDeck(playerId):
 	return playerDecks[playerId]
@@ -35,3 +47,18 @@ func getTimeLeft():
 		return 5
 	else:
 		return 10 
+
+#returns index at where the deviceId is found
+func getPlayerId(deviceId):
+	var index = 0
+	for id in joinedPlayers:
+		if id == deviceId:
+			return index
+		index += 1
+	return null
+
+func getNumPlayers():
+	return joinedPlayers.size()
+
+#Persistence keys
+var broom_upgrade = false
