@@ -56,8 +56,8 @@ func handleNormal(event):
 	elif event.is_action_pressed("A") and event.device == deviceId:
 		var item = globals.mainGame.getItemData(playerId)
 		if item.price <= coins:
-			item.buyItem(playerId)
 			setCoins(-item.price)
+			item.buyItem(playerId)
 	elif event.is_action_pressed("Select_R2") and event.device == deviceId:
 		displayDeck()
 		pass

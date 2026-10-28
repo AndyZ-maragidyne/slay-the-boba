@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AddCardToDraw" format=3 uid="uid://b5qtre4rg8ipo"]
+
+[ext_resource type="Resource" uid="uid://uckvyjgevhyi" path="res://Cards/Boba.tres" id="1_d6r2q"]
+[ext_resource type="Script" uid="uid://dsm856d7ysx1o" path="res://Cards/Scripts/AddCardToDraw.gd" id="2_7clg5"]
+
+[resource]
+script = ExtResource("2_7clg5")
+cardScene = ExtResource("1_d6r2q")
+amount = 3
+cost = 1
+cardName = "Cook Boba"
+description = "Adds 3 Boba to your draw pile"
+limitedUses = true
+maxUses = 1
+metadata/_custom_type_script = "uid://dsm856d7ysx1o"

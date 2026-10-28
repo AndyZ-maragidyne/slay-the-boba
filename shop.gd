@@ -174,6 +174,7 @@ func generateCard(listing):
 	var randomIndex = randi() % cardPool.size()
 	var card = cardPool.pop_at(randomIndex)
 	listing.stockCard(card)
+	listing.price = randi_range(10, 17)
 	shelf.displayItems()
 	for player in globals.joinedPlayers:
 		reselect(globals.getPlayerId(player))

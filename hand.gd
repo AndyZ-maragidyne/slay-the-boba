@@ -168,7 +168,10 @@ func exit_targeting_mode() -> void:
 func play_selected_card() -> void:
 	if selected_index == -1 or hand.size() == 0:
 		return
-		
+	
+	#if hand[selected_index].selectable == false:
+		#return
+	
 	var card_to_play = hand[selected_index]
 	if card_to_play.cost > get_parent().energy:
 		var new_spot = get_active_spot()

@@ -9,5 +9,6 @@ cost = 1
 cardName = "Milky Tea"
 limitedUses = true
 maxUses = 1
+spawnItem = true
 itemData = ExtResource("1_62tj1")
 metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

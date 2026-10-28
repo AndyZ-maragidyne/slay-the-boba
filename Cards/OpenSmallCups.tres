@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardOpenSmallCups" format=3 uid="uid://ctcedmpfc5t1o"]
+
+[ext_resource type="Script" uid="uid://dqwjjpk8k5wto" path="res://Cards/Scripts/OpenCups.gd" id="1_eps15"]
+[ext_resource type="Resource" uid="uid://cvfytja4jxh5f" path="res://Cards/SmallCup.tres" id="2_aecu7"]
+
+[resource]
+script = ExtResource("1_eps15")
+cost = 1
+cardName = "Obtain Cups"
+description = "Add 3 Small Cups to your hand"
+metadata/_custom_type_script = "uid://dqwjjpk8k5wto"

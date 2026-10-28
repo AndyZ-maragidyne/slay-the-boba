@@ -61,6 +61,7 @@ func displayItems():
 			price.position = Vector2(item.position) + Vector2(-20, 100)
 			price.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 			price.add_theme_font_size_override("font_size", 30)
+			displayPrices.append(price)
 			add_child(price)
 			
 			index += 1

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://jq5hvkcmlauo"]
+
+[ext_resource type="Script" uid="uid://cenmim38sb5m2" path="res://items/itemData.gd" id="1_ew565"]
+
+[resource]
+script = ExtResource("1_ew565")
+itemName = "Measuring Cup"
+size = 2
+metadata/_custom_type_script = "uid://cenmim38sb5m2"

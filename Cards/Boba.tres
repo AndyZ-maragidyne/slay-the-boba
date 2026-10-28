@@ -11,5 +11,6 @@ cardName = "Boba"
 item = ExtResource("1_kkr2i")
 limitedUses = true
 maxUses = 1
+spawnItem = true
 itemData = ExtResource("2_2t0ki")
 metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

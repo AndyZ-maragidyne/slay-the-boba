@@ -25,9 +25,9 @@ func _ready() -> void:
 	setupUnlockedCards()
 	
 func setupUnlockedCards():
-	var smallCup = preload("res://Cards/SmallCup.tres")
-	var milkytea = preload("res://Cards/MilkyTea.tres")
-	var boba = preload("res://Cards/InstantTapioca.tres")
+	var smallCup = preload("res://Cards/OpenSmallCups.tres")
+	var milkytea = preload("res://Cards/MilkTeaPowder.tres")
+	var boba = preload("res://Cards/InstantBobaPacket.tres")
 	unlockedCardPool = [[CardListing.new(smallCup), CardListing.new(milkytea), CardListing.new(boba), CardListing.new()], [CardListing.new(), CardListing.new(), CardListing.new(), CardListing.new()], [CardListing.new(), CardListing.new(), CardListing.new(), CardListing.new()], [CardListing.new(), CardListing.new(), CardListing.new(), CardListing.new()]]
 
 

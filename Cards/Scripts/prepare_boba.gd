@@ -1,8 +1,8 @@
 extends CardData
 class_name CardPrepareBoba
 
-var BobaScene = preload("res://Cards/boba.tres")
-#TODO FIX if it still dosent work. this dosent exist anymore
+var BobaScene = preload("res://Cards/CookBoba.tres")
+
 
 func onAbility(card, player):
 	var boba = Card.create(BobaScene)

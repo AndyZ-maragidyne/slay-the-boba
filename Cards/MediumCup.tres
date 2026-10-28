@@ -10,5 +10,7 @@ cost = 1
 cardName = "Medium Cup"
 description = "-1 rep for each unfill section"
 item = ExtResource("1_bwhgd")
+limitedUses = true
+maxUses = 1
 itemData = ExtResource("2_o3u1o")
 metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

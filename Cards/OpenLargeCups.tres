@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardOpenLargeCups" format=3 uid="uid://b1e4wm2hm451y"]
+
+[ext_resource type="Script" uid="uid://f1chcljqovi1" path="res://Cards/Scripts/OpenLargeCups.gd" id="1_3m2ip"]
+
+[resource]
+script = ExtResource("1_3m2ip")
+cost = 1
+cardName = "Open Large Cups"
+description = "Add 1 Large Cup to your hand"
+metadata/_custom_type_script = "uid://f1chcljqovi1"

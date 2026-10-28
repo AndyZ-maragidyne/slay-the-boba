@@ -7,9 +7,10 @@ class_name CardData
 @export var item:PackedScene
 @export var limitedUses:bool = false
 @export var maxUses:int = -1
-@export var spawnItem:bool = true
+@export var spawnItem:bool = false
 @export var itemData:Resource
 @export var tags:Array[String] = []
+@export var selectable = true
 
 func _init() -> void:
 	pass

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://1alrkflkwcak"]
+
+[ext_resource type="Resource" uid="uid://iljknwedhyno" path="res://Cards/ItemData/MangoChunks.tres" id="1_4fc36"]
+[ext_resource type="Script" uid="uid://b0aj8a2cxyl1f" path="res://Cards/Scripts/cardData.gd" id="1_8sc4a"]
+
+[resource]
+script = ExtResource("1_8sc4a")
+cost = 1
+cardName = "Mango Chunks"
+itemData = ExtResource("1_4fc36")
+metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

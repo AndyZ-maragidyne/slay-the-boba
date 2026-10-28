@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardInstantBobaPacket" format=3 uid="uid://brw6xxblorhgx"]
+
+[ext_resource type="Script" uid="uid://b7ih5p01l857l" path="res://Cards/Scripts/InstantBobaPacket.gd" id="1_3msko"]
+
+[resource]
+script = ExtResource("1_3msko")
+cost = 1
+cardName = "Instant Boba Packet"
+description = "Add an Instant Tapioca to your hand"
+metadata/_custom_type_script = "uid://b7ih5p01l857l"

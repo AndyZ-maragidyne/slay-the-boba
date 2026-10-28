@@ -11,5 +11,6 @@ cardName = "Instant Tapioca"
 item = ExtResource("1_3yvl5")
 limitedUses = true
 maxUses = 1
+spawnItem = true
 itemData = ExtResource("2_07nt1")
 metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

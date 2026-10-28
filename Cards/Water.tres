@@ -7,5 +7,6 @@
 script = ExtResource("1_j4c22")
 cost = 1
 cardName = "Water"
+spawnItem = true
 itemData = ExtResource("1_4p384")
 metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

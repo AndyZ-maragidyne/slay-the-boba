@@ -3,7 +3,7 @@ class_name ItemData
 
 enum Category {CUP, LIQUID, TOPPING}
 enum Size {NONE, SMALL, MEDIUM, LARGE}
-enum LiquidType {NONE, MILK, TEA, MISC}
+enum LiquidType {NONE, MILK, TEA, FRUIT, MILK_TEA, FRUIT_TEA, SLUSH}
 
 @export var itemName: String
 @export var category: Category

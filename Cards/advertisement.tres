@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bsqblocx8ue1o"]
+
+[ext_resource type="Script" uid="uid://b0aj8a2cxyl1f" path="res://Cards/Scripts/cardData.gd" id="1_l3nk0"]
+
+[resource]
+script = ExtResource("1_l3nk0")
+cardName = "Advertisement"
+description = "Unplayable"
+selectable = false
+metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

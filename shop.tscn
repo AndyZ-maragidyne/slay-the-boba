@@ -6,24 +6,24 @@
 [ext_resource type="Resource" uid="uid://w6jjisnihmcu" path="res://Cards/Tea.tres" id="2_k3iel"]
 [ext_resource type="Resource" uid="uid://uckvyjgevhyi" path="res://Cards/Boba.tres" id="3_2807j"]
 [ext_resource type="PackedScene" uid="uid://vbmtijwgma3y" path="res://Shop/ShopPlayer.tscn" id="4_6lah5"]
-[ext_resource type="Resource" uid="uid://b1o35sltj3jk6" path="res://Cards/Milk.tres" id="4_u7exk"]
 [ext_resource type="Resource" uid="uid://bjlaiw2e5hgwq" path="res://Cards/Clean.tres" id="5_db3q1"]
 [ext_resource type="Resource" uid="uid://0ij1ft8q6mll" path="res://Cards/Water.tres" id="6_8f8xc"]
 [ext_resource type="Script" uid="uid://cg46e30ak6tpa" path="res://playerManagerShop.gd" id="7_8kdgp"]
-[ext_resource type="Resource" uid="uid://jakrtoq36oep" path="res://Cards/LargeCup.tres" id="7_g4q3a"]
 [ext_resource type="Resource" uid="uid://clmxopbof15ca" path="res://Cards/Overtime.tres" id="8_bv3hj"]
-[ext_resource type="Resource" uid="uid://dhkl7q6ogvkr7" path="res://Cards/MediumCup.tres" id="9_lccd8"]
 [ext_resource type="Resource" uid="uid://ceo1aoypby27p" path="res://Cards/TakeOrder.tres" id="10_ckaty"]
 [ext_resource type="Resource" uid="uid://c8tnlgcajubqb" path="res://Cards/ExtraShift.tres" id="11_ugyvi"]
+[ext_resource type="Resource" uid="uid://cri8gisa3uh1d" path="res://Cards/MilkCarton.tres" id="12_il0eq"]
 [ext_resource type="Resource" uid="uid://dbi5edull1p3s" path="res://Cards/PrepareBoba.tres" id="12_kdli5"]
+[ext_resource type="Resource" uid="uid://tv6cevu543r5" path="res://Cards/OpenMediumCups.tres" id="13_acxsc"]
 [ext_resource type="Resource" uid="uid://bnefcsnphtwqo" path="res://Cards/EatIngredients.tres" id="13_ebk4j"]
 [ext_resource type="Resource" uid="uid://sw6a2i2law6h" path="res://Cards/RefineCrystals.tres" id="14_bnjor"]
+[ext_resource type="Resource" uid="uid://b1e4wm2hm451y" path="res://Cards/OpenLargeCups.tres" id="14_k3iel"]
 [ext_resource type="PackedScene" uid="uid://b8qiahk4e1f7h" path="res://upgrades_shelf.tscn" id="20_il0eq"]
 [ext_resource type="PackedScene" uid="uid://xl13i70iixw7" path="res://Shop/card_replacement_listing.tscn" id="22_k3iel"]
 
 [node name="Shop" type="Node2D" unique_id=1168581076]
 script = ExtResource("1_viryw")
-cardPool = Array[Resource]([ExtResource("2_k3iel"), ExtResource("3_2807j"), ExtResource("4_u7exk"), ExtResource("5_db3q1"), ExtResource("6_8f8xc"), ExtResource("7_g4q3a"), ExtResource("8_bv3hj"), ExtResource("9_lccd8"), ExtResource("10_ckaty"), ExtResource("11_ugyvi"), ExtResource("12_kdli5"), ExtResource("13_ebk4j"), ExtResource("14_bnjor")])
+cardPool = Array[Resource]([ExtResource("2_k3iel"), ExtResource("3_2807j"), ExtResource("5_db3q1"), ExtResource("6_8f8xc"), ExtResource("8_bv3hj"), ExtResource("10_ckaty"), ExtResource("11_ugyvi"), ExtResource("12_kdli5"), ExtResource("13_ebk4j"), ExtResource("14_bnjor"), ExtResource("12_il0eq"), ExtResource("13_acxsc"), ExtResource("14_k3iel")])
 
 [node name="Shopbackground" type="Sprite2D" parent="." unique_id=373897826]
 position = Vector2(961.3354, 540.25)
@@ -36,9 +36,6 @@ offset_right = 1685.0
 offset_bottom = 166.0
 theme_override_font_sizes/font_size = 62
 text = "Buy some cards"
-
-[node name="StoreShelf" parent="." unique_id=2143976579 instance=ExtResource("2_e7rdd")]
-position = Vector2(1440, 200)
 
 [node name="upgrades(store)" type="Label" parent="." unique_id=1895644386]
 offset_left = 50.0
@@ -67,3 +64,6 @@ position = Vector2(1870, 998)
 
 [node name="UpgradesShelf" parent="." unique_id=441678697 instance=ExtResource("20_il0eq")]
 position = Vector2(662, 401)
+
+[node name="StoreShelf" parent="." unique_id=2143976579 instance=ExtResource("2_e7rdd")]
+position = Vector2(1440, 200)

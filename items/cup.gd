@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name Cup
 @export var layers = 1
 
 var colors: Array[Color] = []

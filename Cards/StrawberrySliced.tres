@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bbfxgt5jk3081"]
+
+[ext_resource type="Script" uid="uid://b0aj8a2cxyl1f" path="res://Cards/Scripts/cardData.gd" id="1_x4c7r"]
+[ext_resource type="Resource" uid="uid://dncqgvewkpfh5" path="res://Cards/ItemData/StrawberrySliced.tres" id="1_xog38"]
+
+[resource]
+script = ExtResource("1_x4c7r")
+cost = 1
+cardName = "Sliced Strawberry"
+spawnItem = true
+itemData = ExtResource("1_xog38")
+metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

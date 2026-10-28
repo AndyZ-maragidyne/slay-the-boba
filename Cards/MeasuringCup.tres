@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardMeasuringCup" format=3 uid="uid://dak1gdswlhf7u"]
+
+[ext_resource type="PackedScene" uid="uid://5xnk2djdqr0" path="res://items/measuring_cup.tscn" id="1_cro4r"]
+[ext_resource type="Resource" uid="uid://jq5hvkcmlauo" path="res://Cards/ItemData/MeasuringCup.tres" id="2_euwpi"]
+[ext_resource type="Script" uid="uid://is8dxyo8egsr" path="res://Cards/Scripts/MeasuringCup.gd" id="3_euwpi"]
+
+[resource]
+script = ExtResource("3_euwpi")
+cost = 1
+cardName = "Measuring Cup"
+description = "Places a measuring cup"
+item = ExtResource("1_cro4r")
+itemData = ExtResource("2_euwpi")
+metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

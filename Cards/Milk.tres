@@ -9,6 +9,6 @@ cost = 1
 cardName = "Milk"
 limitedUses = true
 maxUses = 1
-spawnItem = false
+spawnItem = true
 itemData = ExtResource("1_eae33")
 metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

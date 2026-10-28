@@ -78,11 +78,17 @@ func initializeDecks():
 	var takeOrder = preload("res://Cards/TakeOrder.tres")
 	var milkyTea = preload("res://Cards/MilkyTea.tres")
 	var instantBoba = preload("res://Cards/InstantTapioca.tres")
+	var obtainCups = preload("res://Cards/OpenSmallCups.tres")
+	var instantBobaPacket = preload("res://Cards/InstantBobaPacket.tres")
+	var milkTeaPowder = preload("res://Cards/MilkTeaPowder.tres")
+	
 	var card = preload("res://Cards/Card.tscn")
+	
 	#
-	var q1 = preload("res://Cards/MilkTea.tres")
+	var q1 = preload("res://Cards/MilkyTea.tres")
 	var q2 = preload("res://Cards/Water.tres")
 	var q3 = preload("res://Cards/Boba.tres")
+	var mcup = preload("res://Cards/MeasuringCup.tres")
 	#var q4 = preload("res://Cards/RefineCrystals.tscn")
 	#var q5 = preload("res://Cards/Extra Shift.tscn")
 	#var q6 = preload("res://Cards/Overtime.tscn")
@@ -93,6 +99,21 @@ func initializeDecks():
 	
 	var index = 0
 	for p in globals.joinedPlayers:
+		#Starter Deck
+		var cardR = Card.create(obtainCups)
+		globals.playerDecks[index].append(cardR)
+		cardR = Card.create(instantBobaPacket)
+		globals.playerDecks[index].append(cardR)
+		cardR = Card.create(milkTeaPowder)
+		globals.playerDecks[index].append(cardR)
+		cardR = Card.create(takeOrder)
+		globals.playerDecks[index].append(cardR)
+		cardR = Card.create(takeOrder)
+		globals.playerDecks[index].append(cardR)
+		cardR = Card.create(mcup)
+		globals.playerDecks[index].append(cardR)
+		
+		
 		#used for testing
 		#var cardS = Card.create(q1)
 		#globals.playerDecks[index].append(cardS)
@@ -146,6 +167,6 @@ func initializeDecks():
 		#globals.playerDecks[index].append(cardS)
 		#cardS = Card.create(q3)
 		#globals.playerDecks[index].append(cardS)
-		#index += 1
+		index += 1
 		pass
 	

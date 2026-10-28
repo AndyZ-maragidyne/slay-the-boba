@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://5xnk2djdqr0"]
+
+[ext_resource type="Script" uid="uid://ygsl678xxcvr" path="res://items/measuring_cup.gd" id="1_6vien"]
+[ext_resource type="Texture2D" uid="uid://hqiv0jgf28xv" path="res://picutres/measuring cup.png" id="2_3fhkd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgwgd"]
+size = Vector2(146.5, 4.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1w8i"]
+size = Vector2(5.1259785, 169.99573)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsf34"]
+size = Vector2(8.837869, 53.31038)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4t5c"]
+size = Vector2(5.4744906, 189.7437)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4roop"]
+size = Vector2(6.3696504, 58.223568)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehfgo"]
+size = Vector2(7.8864584, 175.63266)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgng2"]
+size = Vector2(9.340606, 217.83401)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfk4g"]
+size = Vector2(5.164849, 298.917)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0lss1"]
+size = Vector2(5.1886206, 35.87182)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcu4p"]
+size = Vector2(5.1886206, 44.158096)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqtja"]
+size = Vector2(6.58243, 35.458496)
+
+[node name="MeasuringCup" type="Node2D" unique_id=289598087]
+script = ExtResource("1_6vien")
+
+[node name="Cup" type="RigidBody2D" parent="." unique_id=1924935818]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cup" unique_id=562050403]
+position = Vector2(-33.25, 133.625)
+shape = SubResource("RectangleShape2D_kgwgd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cup" unique_id=1572755709]
+position = Vector2(83.452896, 11.711807)
+rotation = 0.09599311
+shape = SubResource("RectangleShape2D_c1w8i")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Cup" unique_id=1030309758]
+position = Vector2(58.000004, 115.00001)
+rotation = 0.715585
+shape = SubResource("RectangleShape2D_nsf34")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Cup" unique_id=1426167023]
+position = Vector2(-144.81772, -6.172718)
+rotation = -0.09599311
+shape = SubResource("RectangleShape2D_u4t5c")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Cup" unique_id=1373655808]
+position = Vector2(-121.23689, 111.408264)
+rotation = -0.5724679
+shape = SubResource("RectangleShape2D_4roop")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Cup" unique_id=596874151]
+position = Vector2(146.99998, 8.000005)
+rotation = -0.27925268
+shape = SubResource("RectangleShape2D_ehfgo")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Cup" unique_id=355160236]
+position = Vector2(172.12976, -25.260841)
+rotation = -0.2443461
+shape = SubResource("RectangleShape2D_dgng2")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Cup" unique_id=922460233]
+position = Vector2(-7.5414963, -132.58243)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_qfk4g")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Cup" unique_id=1689731433]
+position = Vector2(187.00002, 85.00001)
+rotation = 1.2479104
+shape = SubResource("RectangleShape2D_0lss1")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Cup" unique_id=354669513]
+position = Vector2(-174.41861, -127.560905)
+rotation = 1.3875368
+shape = SubResource("RectangleShape2D_0lss1")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Cup" unique_id=2041308912]
+position = Vector2(-173.03159, -111.669914)
+rotation = 2.146755
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_hcu4p")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Cup" unique_id=1573986238]
+position = Vector2(107.27075, -74.291214)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_jqtja")
+
+[node name="Color" type="Polygon2D" parent="Cup" unique_id=2102754062]
+visible = false
+polygon = PackedVector2Array(90, -70, -151, -71, -134, 86, -129, 101, -126, 110, -112, 124, -87, 132, -58, 133, -35, 134, 11, 134, 34, 132, 49, 129, 59, 122, 66, 111, 72, 100, 76, 80, 88, -41)
+
+[node name="MeasuringCup" type="Sprite2D" parent="Cup" unique_id=2067306356]
+position = Vector2(3, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_3fhkd")

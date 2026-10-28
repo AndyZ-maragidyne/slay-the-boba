@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dcwb6k4jqmcap"]
+
+[ext_resource type="Script" uid="uid://cenmim38sb5m2" path="res://items/itemData.gd" id="1_qaif4"]
+
+[resource]
+script = ExtResource("1_qaif4")
+itemName = "Fresh Lychee"
+category = 2
+pointValue = 8
+coinValue = 8
+liquidType = 3
+metadata/_custom_type_script = "uid://cenmim38sb5m2"

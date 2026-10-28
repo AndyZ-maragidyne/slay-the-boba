@@ -29,8 +29,14 @@ func addOrder():
 			var chosen = notEmpty.pick_random()
 			for i in chosen:
 				drink.order.requirements.add(i)
-			
-		
+
+#Used for adding the measuring cup
+func addItem():
+	var drink = drinkScene.instantiate()
+	drink.get_node("Stuff/Score").visible = false
+	add_child(drink)
+	drinkSpots.append(drink)
+	return drink
 	
 func update_drink_layout():
 	var targetPositions = [

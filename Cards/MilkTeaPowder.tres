@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardMilkTeaPowder" format=3 uid="uid://fcx7kahec1fh"]
+
+[ext_resource type="Script" uid="uid://d51hlofx3iuu" path="res://Cards/Scripts/MilkTeaPowder.gd" id="1_46ptp"]
+
+[resource]
+script = ExtResource("1_46ptp")
+cost = 1
+cardName = "Milk Tea Powder"
+description = "Add 2 Milky Tea to your hand"
+metadata/_custom_type_script = "uid://d51hlofx3iuu"

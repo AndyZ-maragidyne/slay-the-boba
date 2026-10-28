@@ -8,5 +8,6 @@ script = ExtResource("1_y86rj")
 cardName = "Fresh Milk Tea"
 limitedUses = true
 maxUses = 1
+spawnItem = true
 itemData = ExtResource("1_4eq5l")
 metadata/_custom_type_script = "uid://b0aj8a2cxyl1f"

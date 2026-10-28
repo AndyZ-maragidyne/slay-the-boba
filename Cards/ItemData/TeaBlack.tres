@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://byiyposrk1ttl"]
+
+[ext_resource type="Script" uid="uid://cenmim38sb5m2" path="res://items/itemData.gd" id="1_gm8cb"]
+
+[resource]
+script = ExtResource("1_gm8cb")
+itemName = "Black"
+category = 1
+pointValue = 2
+coinValue = 2
+liquidType = 2
+color = Color(0.26, 0.005199995, 0.005199995, 1)
+metadata/_custom_type_script = "uid://cenmim38sb5m2"

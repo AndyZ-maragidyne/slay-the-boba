@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AddCardToHand" format=3 uid="uid://cri8gisa3uh1d"]
+
+[ext_resource type="Resource" uid="uid://b1o35sltj3jk6" path="res://Cards/Milk.tres" id="1_atuhd"]
+[ext_resource type="Script" uid="uid://bvgbmyu818wf7" path="res://Cards/Scripts/AddCardToHand.gd" id="2_ckb0s"]
+
+[resource]
+script = ExtResource("2_ckb0s")
+cardScene = ExtResource("1_atuhd")
+amount = 3
+cost = 1
+cardName = "Milk Carton"
+description = "Add 3 Milk to hand"
+limitedUses = true
+maxUses = 1
+metadata/_custom_type_script = "uid://bvgbmyu818wf7"

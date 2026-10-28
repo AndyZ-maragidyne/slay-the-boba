@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dncqgvewkpfh5"]
+
+[ext_resource type="Script" uid="uid://cenmim38sb5m2" path="res://items/itemData.gd" id="1_5cqrg"]
+
+[resource]
+script = ExtResource("1_5cqrg")
+itemName = "Sliced Strawbery"
+category = 2
+pointValue = 4
+coinValue = 4
+liquidType = 3
+metadata/_custom_type_script = "uid://cenmim38sb5m2"
