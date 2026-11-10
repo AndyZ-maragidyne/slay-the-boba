@@ -5,6 +5,6 @@ This is a Rouglike deckbuilder game inspired by Slay The Spire where you work at
 - A better shop system with rotating cards and the ability to purchase permanent upgrades for your store
 - More actions the player can perform besides making drinks, such as cutting fruit or preparing toppings
 - More variety in toppings and drink types
-- Debuff/boss levels that vary up the core gameplay
+- Debuff/boss levels that make players change how they build their deck from run to run
 - Character selection with different starter decks and different passive abilities
 - An option to choose the setting of the store, which will have some gameplay changes
